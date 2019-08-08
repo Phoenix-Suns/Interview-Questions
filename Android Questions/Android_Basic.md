@@ -117,7 +117,7 @@ public static float convertPixelsToDp(float px, Context context){
 }
 ```
 
-## Khi 1 activity đang chạy, ta nhấn nút Home thì activity đó đi vào những trạng thái nào.
+## Khi 1 activity đang chạy, ta nhấn nút Home thì activity đó đi vào những trạng thái nào
 
 onStop
 
@@ -130,41 +130,91 @@ onPause
 onStop or onDestroy.
 Tùy vị trí Crash Activity hay Application.
 
-## Nếu thêm nhiều Fragment vào cùng 1 FrameLayout bằng FragmentManager thì thực tế hiển thị fragment nào, các fragment kia rơi vào trạng thái gì.
+## Nếu thêm nhiều Fragment vào cùng 1 FrameLayout bằng FragmentManager thì thực tế hiển thị fragment nào, các fragment kia rơi vào trạng thái gì
 
-- Hiển thị fragment 
+- Hiển thị tất cả chồng lên nhau.
+- Không rơi vào trạng thái nào. Trạng thái cuối là onResume
 
-- Khi đang ở trong Activity, xoay màn hình thì Activity đi vào những trạng thái nào
-- Khi đang ở trong Activity, mở 1 AlertDialog thì activity đi vào những trạng thái nào
-- Tạo mới 1 Thread trong activity, khi mở activity mới thì Thread đó có còn chạy ko
-- Tạo mới 1 AsyncTask trong activity, mở activity mới thì AsyncTask đó còn chạy ko
-- MediaPlayer đang chạy trong, tạo mới activity khác, player đó còn chạy ko
-- Giải thích về 4 launchmode:standard, singleTop, singleTask, singleInstance
-- Foreground và Background Service là gì, Bound service là gì
-- Phân biệt Serializable và Parcelable, cái nào tốt hơn
-- ANR là gì, khi nào nó xảy ra: Application not responding
-- So sánh LinearLayout và ConstrainLayout
-- Sự khác nhau giữ View.GONE và View.INVISIBLE
-- Liệt kê một số thư viện http đã dùng
-- Rest APIs là gì, tại sao lại dùng nó
-- Tại sao Android dùng db SQLite
-- Khi nào dùng SQL, khi nào dùng XML
-- Android Gradle là gì
-- Dependency injection là gì
-- Làm thế nào để upload 1 file ảnh trong máy Android lên server
+## Khi đang ở trong Activity, xoay màn hình thì Activity đi vào những trạng thái nào
 
-- Liệt kê, giải thích 4 tính chất OOP
-- MVVM, MVP, MVC là gì, khi nào dùng cái nào
-- Singleton dùng để làm gì
-- Khi nào dùng Interface hoặc Abstract Class
-- Immutable và mutable là gì
-- Tại sao Class String trong Java lại immutable
-- Daemon Thread là gì
-- Android Garbage collection hoạt động ntn
-- Khi nào 1 object sẵn sàng for Garbage collection hốt
-- StringBuilder vs String
-- StringBuilder vs StringBuffer
-- Liệt kê những trường hợp mà finally ko đc gọi
-- Java dùng pass-by-value hay pass-by-reference
-- Trình bày cách để break bên trong vòng lặp lòng nhau
-- Cách hoán đổi 2 số a và b mà ko cần tạo thêm biến thứ 3
+onStart -> onResume
+
+## Khi đang ở trong Activity, mở 1 AlertDialog thì activity đi vào những trạng thái nào
+
+Không có
+
+## Tạo mới 1 Thread trong activity, khi mở activity mới thì Thread đó có còn chạy ko
+
+Vẫn chạy kể cả khi finish Activity
+
+## MediaPlayer đang chạy trong, tạo mới activity khác, player đó còn chạy ko
+
+Vẫn chạy
+
+## Giải thích về 4 launchmode: standard, singleTop, singleTask, singleInstance
+
+- Standard: Activity có thể khởi tạo nhiều lần
+- SingleTop: (giống Standard). Nếu Activity ở Top, không khởi tạo, chỉ gọi lại onNewIntent.
+
+- SingleTask: Chỉ có 1 Activity được khởi tạo. Mỗi lần Start Activity, clear Activity sau nó.
+- singleInstance: Activity sẽ chạy Task khác. Nếu gọi Activity đã khởi tạo sẽ nhảy lên trên (clear Activity sau nó).
+
+## Foreground và Background Service là gì, Bound service là gì
+
+- Foreground Service: thực hiện hoạt động mà người dùng chú ý. (vd: nghe nhạc)
+- Background Service: thực hiện hoạt động chạy ngầm. không cần báo người dùng.
+- Bound Service: Component ràng buộc Service để lấy kết quả liên tục (như Client-Server)
+
+## Phân biệt Serializable và Parcelable, cái nào tốt hơn
+
+- Serializable: Chuyển Object(data) thành 1 dạng lưu trữ (text để lưu trữ và phục hồi)
+- Parcelable: Gởi Object(data) thông qua các Bunble trong Android
+
+## ANR là gì, khi nào nó xảy ra: Application not responding
+
+- ANR: Ứng dụng đóng băng, không phải hồi cử chỉ người dùng.
+- 
+
+## So sánh LinearLayout và ConstrainLayout
+
+- LinearLayout: các View con sắp theo 1 chiều (dọc, ngang).
+- ConstrainLayout: các View con sắp xếp có liên kết với nhau.
+
+## Sự khác nhau giữ View.GONE và View.INVISIBLE
+
+- Gone: View biến mất, không giữ kích thước hiện tại.
+- Invisible: View biến mất, vẫn giữ kích thước hiện tại.
+
+## Liệt kê một số thư viện http đã dùng
+
+- Retrofit, HttpRequest
+
+## Rest APIs là gì, tại sao lại dùng nó
+
+REST (Representation State Stranfer): một tiêu chuẩn dùng trong việc thết kế các thiết kế API cho các ứng dụng web.
+API (Application Programming Interface): Giao diện lập trình ứng dụng.
+RESTful API: ứng dụng sử dụng REST
+
+## Tại sao Android dùng db SQLite
+
+- Không phải cài đặt
+- Không cần mô hình Client - Server
+- Chỉ lưu trữ 1 file
+- Chiếm ít bộ nhớ
+- Hỗ trợ truy vấn SQL
+
+## Android Gradle là gì
+
+Gradle là một hệ thống tự động build mã nguồn mở
+
+## Dependency injection là gì
+
+- Là phương pháp giảm sự phụ thuộc 1 module trong 1 module
+- Thay vì khởi tạo 1 object trong 1 object, ta khởi tạo nó bên ngoài. Rồi tim vào bên trong qua: constructer, setter, interface...
+
+## Làm thế nào để upload 1 file ảnh trong máy Android lên server
+
+- Tạo 1 Restfull Api upload ảnh
+- Upload ảnh bằng thư viện Retrofit
+
+---
