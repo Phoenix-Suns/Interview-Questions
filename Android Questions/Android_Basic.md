@@ -119,11 +119,11 @@ public static float convertPixelsToDp(float px, Context context){
 
 ## Khi 1 activity đang chạy, ta nhấn nút Home thì activity đó đi vào những trạng thái nào
 
-onStop
+onPause -> onStop
 
 ## Khi 1 Activity đang chạy, ta chọn recent apps, quét qua để kill app đó thì activity đó đi vào những trạng thái nào
 
-onPause
+onPause -> onStop -> onDestroy
 
 ## Khi 1 Activity đang chạy mà bị crash, activity đó đi vào trạng thái nào
 
