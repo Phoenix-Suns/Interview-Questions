@@ -2,9 +2,9 @@
 
 ## Tại sao bạn muốn công việc này
 
-Tôi đã đọc qua mô tả công việc và cũng xem qua website công ty, vị trí công việc thực sự thu hút tôi, khiến tôi nhận thấy các kỹ năng của bản thân quả thực phù hợp với công việc. Bên cạnh đó, tôi rất hào hứng với những nhiệm vụ và trách nhiệm mới trong công việc này
+(Quan tâm, Tìm hiểu công việc, công ty)
 
-Quan tâm, Tìm hiểu công việc, công ty
+Tôi đã đọc qua mô tả công việc và cũng xem qua website công ty, vị trí công việc thực sự thu hút tôi, khiến tôi nhận thấy các kỹ năng của bản thân quả thực phù hợp với công việc. Bên cạnh đó, tôi rất hào hứng với những nhiệm vụ và trách nhiệm mới trong công việc này
 
 ## Vì sao chúng tôi thuê bạn
 

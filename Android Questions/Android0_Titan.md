@@ -21,8 +21,7 @@ OnCreate - onStart (onRestart) - onResume
 OnPause - OnStop - onDestroy
 
 - OnCreate: Call on Activity first create.
-Screen Rotate.
-- OnStart: Activity become visible to user.
+- OnStart: Activity become visible to user. Screen Rotate.
 - OnResume:  After hidden, Visible Again to user.
 - OnPause: Activity hidden, below other Activity, but we can see it.
 - OnStop: Activity invisible to user. we can not see it.
