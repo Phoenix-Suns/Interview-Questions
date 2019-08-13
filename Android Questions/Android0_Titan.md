@@ -12,6 +12,7 @@
   - [8. how many ways to send data back from Activity B > A](#8-how-many-ways-to-send-data-back-from-activity-b--a)
   - [9. constrain layout](#9-constrain-layout)
   - [10. 1 màn hình có 4 button để upload hình, và 1 nút Save](#10-1-m%c3%a0n-h%c3%acnh-c%c3%b3-4-button-%c4%91%e1%bb%83-upload-h%c3%acnh-v%c3%a0-1-n%c3%bat-save)
+  - [Là gì? dùng trong trường hợp nào](#l%c3%a0-g%c3%ac-d%c3%b9ng-trong-tr%c6%b0%e1%bb%9dng-h%e1%bb%a3p-n%c3%a0o)
 
 ## 1. activity lifecycle
 
@@ -150,3 +151,17 @@ Third Way:
 We use third library like RxAndroid. 
 we put all Upload method into Observable Zip method. 
 then Check finish on Subscribe method
+
+## Là gì? dùng trong trường hợp nào
+
+Generic
+Singletone
+SOLID
+Kotlin các hàm đặc biệt như: let with
+Dragger
+Hàm trong Rx, theard chạy
+
+Các bước vẽ trên GG Map
+Các bước Push Notification
+Thuật toán tìm đường đi ngắn nhất, qua nhiều điểm
+Thuật toán sắp xếp kho hàng

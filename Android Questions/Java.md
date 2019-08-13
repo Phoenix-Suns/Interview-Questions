@@ -110,7 +110,6 @@ Khi có Garbage Collector, chúng ta có thể cấp phát bộ nhớ cho một 
 là những luồng của java chạy song song với luồng của ứng dụng. (vd: Garbage collection)
 Tự hủy cùng với ứng dụng.
 
-
 - Immutable và mutable là gì
 - Tại sao Class String trong Java lại immutable
 

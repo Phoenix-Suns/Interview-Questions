@@ -39,8 +39,6 @@
   - [Application](#application)
   - [Context](#context)
   - [Tại sao bytecode không thể chạy được trong Android?](#t%e1%ba%a1i-sao-bytecode-kh%c3%b4ng-th%e1%bb%83-ch%e1%ba%a1y-%c4%91%c6%b0%e1%bb%a3c-trong-android)
-  - [BuildType ở trong Gradle là gì? Nó được sử dụng với mục đích gì?](#buildtype-%e1%bb%9f-trong-gradle-l%c3%a0-g%c3%ac-n%c3%b3-%c4%91%c6%b0%e1%bb%a3c-s%e1%bb%ad-d%e1%bb%a5ng-v%e1%bb%9bi-m%e1%bb%a5c-%c4%91%c3%adch-g%c3%ac)
-  - [Quá trình build một ứng dụng trong Android.](#qu%c3%a1-tr%c3%acnh-build-m%e1%bb%99t-%e1%bb%a9ng-d%e1%bb%a5ng-trong-android)
 
 ## Viewholder là gì
 
@@ -295,10 +293,6 @@ Gradle là một hệ thống tự động build mã nguồn mở
 
 Android sử dụng DVM - Dalvik Virtual Machine và và ART - Android Runtime (>5.0)
 Không dùng: JVM (Java Virtual Machine)
-
-## BuildType ở trong Gradle là gì? Nó được sử dụng với mục đích gì?
-
-## Quá trình build một ứng dụng trong Android.
 
 <https://viblo.asia/p/mot-so-cau-hoi-phong-van-android-ban-nen-luu-y-phan-1-3Q75wkLQ5Wb>
 
