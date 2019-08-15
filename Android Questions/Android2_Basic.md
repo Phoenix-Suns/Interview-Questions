@@ -106,10 +106,9 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 - Một Thread là một luồng thực thi tuần tự trong một chương trình. Thread có thể được coi là một mini-process chạy ở trong main process.
 
 - Shorter:
-- Service: Thực hiện tác vụ ở Background (vd: chơi nhạc). No UI. Có thể chạy vô thời hạn.
-- IntentService: Tự dừng lại sau khi trả về kết quả.
-- AsyncTask: Thực hiện việc bất đồng bộ ở Background, trả kết quả về UI Thread
-- Thread: là một luồng thực thi tuần tự trong một chương trình. Thread có thể được coi là một mini-process chạy ở trong main process.
+<https://developer.android.com/guide/components/services>
+- Service: Là 1 Android Component, có thể Chạy Ngầm, ngay cả khi người dùng không tương tác. Chạy trong luồng chính.
+- AsyncTask: Thực hiện công việc ngoài luồng chính, chỉ trong khi người dùng còn tương tác ứng dụng.
 
 ## Trình bày LifeCycle của Activity
 
