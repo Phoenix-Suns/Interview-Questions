@@ -12,6 +12,7 @@
   - [8. how many ways to send data back from Activity B > A](#8-how-many-ways-to-send-data-back-from-activity-b--a)
   - [9. constrain layout](#9-constrain-layout)
   - [10. 1 màn hình có 4 button để upload hình, và 1 nút Save](#10-1-m%c3%a0n-h%c3%acnh-c%c3%b3-4-button-%c4%91%e1%bb%83-upload-h%c3%acnh-v%c3%a0-1-n%c3%bat-save)
+  - [S.O.L.I.D](#solid)
   - [Là gì? dùng trong trường hợp nào](#l%c3%a0-g%c3%ac-d%c3%b9ng-trong-tr%c6%b0%e1%bb%9dng-h%e1%bb%a3p-n%c3%a0o)
 
 ## 1. activity lifecycle
@@ -152,6 +153,30 @@ We use third library like RxAndroid.
 we put all Upload method into Observable Zip method. 
 then Check finish on Subscribe method
 
+## S.O.L.I.D
+
+S — Single Responsibility Principle
+O — Open Closed Principle
+L — Liskov Substitution Principle
+I — Interface Segregation Principle
+D — Dependency Inversion Principle
+
+S — Single Responsibility Principle (nhiệm vụ)
+class/module chỉ thực hiện một chức năng. Model, network, calculate...
+
+O — Open Closed Principle (thích nghi)
+code để có thể thích nghi với các yêu cầu mới mà không thay đổi code cũ. Dùng interace để thiết kế.
+
+L — Liskov Substitution (thay thế) Principle
+class con phải thay thế được class cha.
+Nếu lớp cha không giải quyết được lớp con, thì tạo lớp cha lớn hơn, để cả 2 cùng kế thừa.
+
+I — Interface Segregation (phân biệt) Principle
+nhiều interface thực hiện sẽ tốt hơn là ít interface chứa nhiều function. Ko phải implement ko cần thiết
+
+D — Dependency Inversion Principle (phụ thuộc)
+Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong Module
+
 ## Là gì? dùng trong trường hợp nào
 
 Generic
@@ -165,3 +190,15 @@ Các bước vẽ trên GG Map
 Các bước Push Notification
 Thuật toán tìm đường đi ngắn nhất, qua nhiều điểm
 Thuật toán sắp xếp kho hàng
+
+- Khác nhau include và merge
+- FragA->add FragB a qua trạng thái nào-> replace B with C B qua trạng thái nào->popC thì C qua trạng thái nào và A như thế nào
+- nếu a bằng null gọi m a khác null gọi n ko dùng if
+- khi nào viewmodel bị huỷ
+- làm sao biết view nào tiêu tốn nhiều tài nguyên ( dùng cái gì)
+- từ api 16-29 có thay đổi gì cần chú ý
+- có mấy cách để start service
+- làm recycler view giống view pager
+- viết When có trường hợp loại trừ
+- Phân biệt val, var, const, const val, lazy, late init
+- let, also, apply, with

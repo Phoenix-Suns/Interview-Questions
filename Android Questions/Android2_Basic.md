@@ -133,11 +133,11 @@ Screen Rotate.
 
 ```java
 // Thêm Fragment vào View(fragment_container)
-// Nếu thêm nữa thì sẽ hiện cả 2, không Pause Fragment cũ
+// Hiện cả 2, không Pause Fragment cũ
 MyFragment fragment = new MyFragment();
 transaction.add(R.id.fragment_container, fragment, "fragment_tag");
 
-// Xóa Fragment
+// Xóa Fragment (destroy fragment)
 transaction.remove(fragment);
 // Thay thế Fagment hiện tại = fragment = remove + add (Pause fragment cũ)
 transaction.replace(R.id.fragment_container, fragment, "fragment_tag");
@@ -150,11 +150,10 @@ transaction.attach(fragment);
 
 ## Giải thích dp, dpi, pt, sp trong Android
 
-dpi: (Dot per inch) là số lượng điểm ảnh hiển thị trên mỗi inch màn hình
-Pt:  1/72 inch kích thước màn hình.
-
-dp: density independent pixel. Phụ thuộc mật độ điểm ảnh.
-Sp: scale independent pixel. Co theo mật độ điểm ảnh.
+- dpi: (Dot per inch) là số lượng điểm ảnh hiển thị trên mỗi inch màn hình
+- Pt:  1/72 inch kích thước màn hình.
+- dp: density independent pixel. Phụ thuộc mật độ điểm ảnh.
+- Sp: scale independent pixel. Co theo mật độ điểm ảnh.
 
 ## Cho biết công thức quy đổi giữa px và dp
 
@@ -250,9 +249,9 @@ onResume onStart: gọi nhiều lần, tốn tài nguyên
 
 ## Rest APIs là gì, tại sao lại dùng nó
 
-REST (Representation State Stranfer): một tiêu chuẩn dùng trong việc thết kế các thiết kế API cho các ứng dụng web.
-API (Application Programming Interface): Giao diện lập trình ứng dụng.
-RESTful API: ứng dụng sử dụng REST
+- REST (Representation State Stranfer): một tiêu chuẩn dùng trong việc thết kế các thiết kế API cho các ứng dụng web.
+- API (Application Programming Interface): Giao diện lập trình ứng dụng.
+- RESTful API: ứng dụng sử dụng REST
 
 ## Tại sao Android dùng db SQLite
 
@@ -264,7 +263,7 @@ RESTful API: ứng dụng sử dụng REST
 
 ## Android Gradle là gì
 
-Gradle là một hệ thống tự động build mã nguồn mở
+- Gradle là một hệ thống tự động build mã nguồn mở
 
 ## Dependency injection là gì
 
