@@ -7,12 +7,15 @@
   - [4. Memory leak xảy ra khi nào?](#4-memory-leak-x%e1%ba%a3y-ra-khi-n%c3%a0o)
     - [Phòng tránh memory leak](#ph%c3%b2ng-tr%c3%a1nh-memory-leak)
   - [5. describe mvvm, mvvm vs mvc, why mvvm](#5-describe-mvvm-mvvm-vs-mvc-why-mvvm)
-  - [6. dependency injection - Tiêm phụ thuộc](#6-dependency-injection---ti%c3%aam-ph%e1%bb%a5-thu%e1%bb%99c)
   - [7. unit test: how to write code for easier unit testing](#7-unit-test-how-to-write-code-for-easier-unit-testing)
   - [8. how many ways to send data back from Activity B > A](#8-how-many-ways-to-send-data-back-from-activity-b--a)
   - [9. constrain layout](#9-constrain-layout)
   - [10. 1 màn hình có 4 button để upload hình, và 1 nút Save](#10-1-m%c3%a0n-h%c3%acnh-c%c3%b3-4-button-%c4%91%e1%bb%83-upload-h%c3%acnh-v%c3%a0-1-n%c3%bat-save)
   - [S.O.L.I.D](#solid)
+  - [6. dependency injection - Tiêm phụ thuộc](#6-dependency-injection---ti%c3%aam-ph%e1%bb%a5-thu%e1%bb%99c)
+  - [let, also, apply, with](#let-also-apply-with)
+  - [val, var, const, const val, lazy, lateinit](#val-var-const-const-val-lazy-lateinit)
+  - [Rx](#rx)
   - [Là gì? dùng trong trường hợp nào](#l%c3%a0-g%c3%ac-d%c3%b9ng-trong-tr%c6%b0%e1%bb%9dng-h%e1%bb%a3p-n%c3%a0o)
 
 ## 1. activity lifecycle
@@ -78,19 +81,6 @@ Controller get Event from User
 1 Controller relate, control to multi View
 Controller control View + Model
 Longger code
-
-## 6. dependency injection - Tiêm phụ thuộc
-
-dependency: phụ thuộc.
-injected: tiêm, bơm.
-
-It is a method to reduce dependency module in side a other module.
-Dont create Module's Instance in side an other Module.
-We need provide module by other way, like: constructer, setter, interface...
-
-It will easier for unit test, upgrade, update, module.
-
-annotations thirth library, like: dagger 2
 
 ## 7. unit test: how to write code for easier unit testing
 
@@ -177,6 +167,46 @@ nhiều interface thực hiện sẽ tốt hơn là ít interface chứa nhiều
 D — Dependency Inversion Principle (phụ thuộc)
 Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong Module
 
+## 6. dependency injection - Tiêm phụ thuộc
+
+dependency: phụ thuộc.
+injected: tiêm, bơm.
+
+It is a method to reduce dependency module in side a other module.
+Dont create Module's Instance in side an other Module.
+We need provide module by other way, like: constructer, setter, interface...
+
+It will easier for unit test, upgrade, update, module.
+
+annotations thirth library, like: dagger 2
+
+## let, also, apply, with
+
+- with: để gọi nhiều phương thức(method) cùng 1 đối tượng.
+- let: để check null
+  - là một hàm phạm vi (scoping function):
+  - Sử dụng một biến trong một phạm vi cụ thể trong đoạn code.
+- apply: để Trả về Object (giống return function)
+  - extension function cho tất cả các loại Object.
+- also: để trả về Object gọi nó (return this)
+- run: kết hợp with & let
+
+## val, var, const, const val, lazy, lateinit
+
+- var: khai báo biến.
+- val: Khai báo biến tĩnh. (Khởi tạo lúc chạy)
+- const val: Khai báo biến tĩnh. (khởi tạo lúc biên dịch)
+- lateinit: biến khởi tạo sau. (dùng cho var)
+- lazy: biến khởi tạo sau. (dùng cho val)
+
+## Rx
+
+- <http://reactivex.io/documentation/operators.html#creating>
+- just: subscribe item
+- from: subscribe từng item trong list
+- defer: subscribe item cuối cùng (???)
+- interval: subscribe item sau mỗi khoảng thời gian
+
 ## Là gì? dùng trong trường hợp nào
 
 Generic
@@ -184,7 +214,7 @@ Singletone
 SOLID
 Kotlin các hàm đặc biệt như: let with
 Dragger
-Hàm trong Rx, theard chạy
+Hàm trong Rx, theard chạy (v)
 
 Các bước vẽ trên GG Map
 Các bước Push Notification
@@ -200,5 +230,5 @@ Thuật toán sắp xếp kho hàng
 - có mấy cách để start service
 - làm recycler view giống view pager
 - viết When có trường hợp loại trừ
-- Phân biệt val, var, const, const val, lazy, late init
-- let, also, apply, with
+- Phân biệt val, var, const, const val, lazy, lateinit (v)
+- let, also, apply, with (v)

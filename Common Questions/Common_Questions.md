@@ -16,7 +16,8 @@ Tất cả vì công ty.
 
 ## Tại sao bỏ việc
 
-khi nhận thấy môi trường làm việc và chế độ ở đây rất tốt, hơn nữa công việc ở đây thật sự phù hợp với khả năng, kinh nghiệm và trình độ của tôi
+- khi nhận thấy môi trường làm việc và chế độ ở đây rất tốt.
+- hơn nữa công việc ở đây thật sự phù hợp với khả năng, kinh nghiệm và trình độ của tôi.
 
 ## Bạn mong muốn gì ở công ty
 
