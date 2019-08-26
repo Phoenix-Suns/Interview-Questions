@@ -212,11 +212,10 @@ onResume onStart: gọi nhiều lần, tốn tài nguyên
 
 ## Giải thích về 4 launchmode: standard, singleTop, singleTask, singleInstance
 
-- Standard: Activity có thể khởi tạo nhiều lần
-- SingleTop: (giống Standard). Nếu Activity ở Top, không khởi tạo, chỉ gọi lại onNewIntent.
-
-- SingleTask: Chỉ có 1 Activity được khởi tạo. Mỗi lần Start Activity, clear Activity sau nó.
-- singleInstance: Activity sẽ chạy Task khác. Nếu gọi Activity đã khởi tạo sẽ nhảy lên trên (clear Activity sau nó).
+- Standard: nhiều Activity tồn tại (khởi tạo nhiều lần)
+- SingleTop: nhiều Activity tồn tại (khởi tạo nhiều lần). Nếu Activity đã khởi tạo ở trên cùng, chỉ gọi hàm onNewIntent. Nếu không trên cùng thì khởi tạo lại.
+- SingleTask: Chỉ 1 Activity tồn tại. Nếu Activity đã khởi tạo, destroy các Activity sau nó.
+- singleInstance: Chỉ 1 Activity tồn tại, Activity chạy Task khác. Nếu Activity đã khởi tạo, sẽ nhảy lên trên.
 
 ## Foreground và Background Service là gì, Bound service là gì
 

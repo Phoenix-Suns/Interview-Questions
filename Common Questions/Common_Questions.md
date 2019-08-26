@@ -1,23 +1,57 @@
 # Những câu hỏi phổ biến
 
+## Tell me about yourself. (Hãy kể tôi nghe về bản thân bạn.)
+
+Chú trọng kinh nghiệm làm việc.
+Sở thích ngắn gọn.
+
+Tôi 28 tuổi, còn độc thân. Tôi sinh ra và lớn lên ở HCM. Tốt nghiệp Cao đẳng ngành CNTT năm 2012. Chuyên ngành theo đuổi là Mobile Developer. Tôi có 5 năm kinh nghiệm làm lập trình viên, và 3 năm kinh nghiệm lập trình Android, từng làm qua iOS và React-Native. Tôi thích bơi lội, cầu lông, chạy bộ, chơi game, và xem phim.
+
 ## Tại sao bạn muốn công việc này
 
-(Quan tâm, Tìm hiểu công việc, công ty)
-
-Tôi đã đọc qua mô tả công việc và cũng xem qua website công ty, vị trí công việc thực sự thu hút tôi, khiến tôi nhận thấy các kỹ năng của bản thân quả thực phù hợp với công việc. Bên cạnh đó, tôi rất hào hứng với những nhiệm vụ và trách nhiệm mới trong công việc này
-
-## Vì sao chúng tôi thuê bạn
-
-Tất cả vì công ty.
-
-## Điểm mạnh - điểm yếu
-
-Tất cả vì công ty.
+(Tại sao bỏ việc)
 
 ## Tại sao bỏ việc
 
 - khi nhận thấy môi trường làm việc và chế độ ở đây rất tốt.
 - hơn nữa công việc ở đây thật sự phù hợp với khả năng, kinh nghiệm và trình độ của tôi.
+- (Quan tâm, Tìm hiểu công việc, công ty)
+Tôi đã đọc qua mô tả công việc và cũng xem qua website công ty, vị trí công việc thực sự thu hút tôi, khiến tôi nhận thấy các kỹ năng của bản thân quả thực phù hợp với công việc. Bên cạnh đó, tôi rất hào hứng với những nhiệm vụ và trách nhiệm mới trong công việc này.
+
+## Vì sao chúng tôi thuê bạn
+
+(Điểm mạnh)
+
+## Em có gì đặt biệt
+
+(Điểm mạnh)
+
+## Điểm mạnh
+
+- Sáng tạo
+- Tính linh hoạt
+- Mềm dẻo
+- Tập trung
+- Sáng kiến
+- Trung thực
+- Tận tâm
+- Chính trực
+- Tinh thần cầu tiến, luôn học hỏi.
+- Giải quyết vấn đề
+
+- Yêu thích tìm hiểu, học hỏi công nghệ mới.
+- Luôn tìm cách tối ưu để giải quyết vấn đề.
+- Thích làm việc theo nhóm, để trao đổi với các thành viên. Nhưng vẫn có thể làm việc độc lập.
+- Tận tâm, và trung thực.
+
+## Điểm yếu
+
+- Thích cảm giác an toàn
+- Cực kỳ hướng nội, ít nói, trong nhóm, hay hội họp.
+- Quá tập trung chi tiết
+- Nói trước công chúng yếu
+- Kĩ năng thuyết trình yếu
+- Tìm cách khắc phục điểm yếu
 
 ## Bạn mong muốn gì ở công ty
 
@@ -31,12 +65,12 @@ Mong muốn thứ 2 khi apply vào vị trí Website developer, là cơ hội ph
 
 “Tôi sẽ phấn đấu và nỗ lực không ngừng để sau 2 đến 3 năm sẽ trở thành 1 senior web developer thật chuyên nghiệp”
 
---- 
+---
 
 What were your responsibilities? (Trách nhiệm của bạn là gì?)
 What major challenges and problems did you face? How did you handle them? (Có thử thách hay rắc rối nào lớn mà bạn từng đối mặt không? Bạn đã xử lí nó như thế nào?)
-What is your greatest weakness? (Điểm yếu lớn nhất của bạn là gì?)
-What is your greatest strength? (Điểm mạnh lớn nhất của bạn là gì?)
+- What is your greatest weakness? (Điểm yếu lớn nhất của bạn là gì?)
+- What is your greatest strength? (Điểm mạnh lớn nhất của bạn là gì?)
 What did you like or dislike about your previous job? (Điều gì bạn thích/ không thích về công việc cũ?)
 Describe a difficult work situation / project and how you overcame it. (Mô tả một tình huống hay dự án công việc khó khăn và cách bạn vượt qua nó.)
 How do you evaluate success? (Bạn định giá thành công như thế nào?)
@@ -46,8 +80,8 @@ Questions about your career goals. (Những câu hỏi về mục tiêu trong s�
 Why do you want this job? (Tại sao bạn muốn làm công việc này?)
 What are your goals for the future? (Mục tiêu cho tương lại của bạn là gì?)
 Why should we hire you? (Tại sao chúng tôi phải thuê bạn?)
-Why are you leaving or have left your job? (Tại sao bạn rời bỏ công việc cũ?)
-Tell me about yourself. (Hãy kể tôi nghe về bản thân bạn.)
+- Why are you leaving or have left your job? (Tại sao bạn rời bỏ công việc cũ?)
+- Tell me about yourself. (Hãy kể tôi nghe về bản thân bạn.)
 What are you passionate about? (Bạn nhiệt huyết về cái gì?)
 Who was your best boss and who was the worst? (Ai là sếp tốt nhất và tệ nhất của bạn?)
 What are your salary requirements? (Yêu cầu về lương bổng của bạn là gì?)
@@ -76,24 +110,3 @@ What are your salary requirements? (Yêu cầu về lương bổng của bạn l
 7- What is the company's policy on providing education, workshops, and training so employees can keep up their skills or acquire new ones?
 (Chính sách của công ty trong việc cung cấp giáo dục, hội thảo và đào tạo để nhân viên có thể theo kịp các kỹ năng của họ hoặc có được những kĩ năng mới là gì?)
 Những  câu hỏi về công việc
-
-- Anh/chị có thể nói rõ thêm về những công việc chưa được nói đến trong mô tả công việc không?
-
-- Những định hướng cụ thể của công ty cho vị trí này là gì?
-
-- Đây là một vị trí mới hay là tuyển người cho một vị trí cũ?
-
-- Nếu là một vị trí cũ, lý do vì sao họ lại không làm ở vị trí này nữa?
-
-- Một ngày làm việc điển hình của vị trí này có thể được miêu tả như thế nào?
-
-- Thời gian vất vả nhất trong năm của vị trí này là thời gian nào? Tại sao?
-
-- Điều gì là quan trọng để một người có thể thành công ở vị trí này?
-
-- Những kỹ năng nào là quan trọng nhất để làm tốt công việc ở vị trí này?
-
-- Thử thách lớn nhất phải đối mặt hàng ngày khi làm việc ở vị trí này là gì?
-
-- Nếu một người thất bại ở vị trí này thì lý do tại sao họ lại thất bại?
-
