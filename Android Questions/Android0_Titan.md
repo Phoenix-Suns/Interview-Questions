@@ -207,6 +207,9 @@ annotations thirth library, like: dagger 2
 - defer: subscribe item cuối cùng (???)
 - interval: subscribe item sau mỗi khoảng thời gian
 
+- map: Trả về phần tử độc lập
+- fatMap: Trả về các phần tử đồng thời
+
 ## Là gì? dùng trong trường hợp nào
 
 Generic
