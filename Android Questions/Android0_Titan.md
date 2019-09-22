@@ -16,6 +16,9 @@
   - [let, also, apply, with](#let-also-apply-with)
   - [val, var, const, const val, lazy, lateinit](#val-var-const-const-val-lazy-lateinit)
   - [Rx](#rx)
+  - [Dialog vs Fragment dialog](#dialog-vs-fragment-dialog)
+  - [Activity vs Fragment Activity vs AppCompatActivity](#activity-vs-fragment-activity-vs-appcompatactivity)
+  - [Context?](#context)
   - [Là gì? dùng trong trường hợp nào](#l%c3%a0-g%c3%ac-d%c3%b9ng-trong-tr%c6%b0%e1%bb%9dng-h%e1%bb%a3p-n%c3%a0o)
 
 ## 1. activity lifecycle
@@ -210,14 +213,29 @@ annotations thirth library, like: dagger 2
 - map: Trả về phần tử độc lập
 - fatMap: Trả về các phần tử đồng thời
 
+## Dialog vs Fragment dialog
+
+- Hiện Fragment theo dạng Dialog, dialog phức tạp, tái sử dụng, khuyến khích dùng
+
+## Activity vs Fragment Activity vs AppCompatActivity
+
+- Activity là lớp cơ sở
+- Fragment Activity (extend Activity) có kèm quản lý fragment
+- AppCompatActivity (extend FragmentActivity) có 1 số hàm tương thích Api Cũ
+
+## Context?
+
+- Cung cấp thông tin, quyền truy cập thông tin, trạng thái ứng dụng
+- ApplicationContext: ngữ cảnh của Toàn ứng dụng
+- BaseContext: lấy ngữ cảnh có thể sử dụng
+- getContext trong View: lấy ngữ cảnh tạo View
+
 ## Là gì? dùng trong trường hợp nào
 
 Generic
 Singletone
 SOLID
-Kotlin các hàm đặc biệt như: let with
 Dragger
-Hàm trong Rx, theard chạy (v)
 
 Các bước vẽ trên GG Map
 Các bước Push Notification
@@ -233,5 +251,3 @@ Thuật toán sắp xếp kho hàng
 - có mấy cách để start service
 - làm recycler view giống view pager
 - viết When có trường hợp loại trừ
-- Phân biệt val, var, const, const val, lazy, lateinit (v)
-- let, also, apply, with (v)
