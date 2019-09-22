@@ -19,6 +19,7 @@
   - [Dialog vs Fragment dialog](#dialog-vs-fragment-dialog)
   - [Activity vs Fragment Activity vs AppCompatActivity](#activity-vs-fragment-activity-vs-appcompatactivity)
   - [Context?](#context)
+  - [Khác nhau include và merge](#kh%c3%a1c-nhau-include-v%c3%a0-merge)
   - [Là gì? dùng trong trường hợp nào](#l%c3%a0-g%c3%ac-d%c3%b9ng-trong-tr%c6%b0%e1%bb%9dng-h%e1%bb%a3p-n%c3%a0o)
 
 ## 1. activity lifecycle
@@ -230,19 +231,24 @@ annotations thirth library, like: dagger 2
 - BaseContext: lấy ngữ cảnh có thể sử dụng
 - getContext trong View: lấy ngữ cảnh tạo View
 
+## Khác nhau include và merge
+
+- merge: áp dụng lớp Container chứa Include
+- <LinearLayout><include></Linearlayout>
+- <merge>123...</merge> => <LinearLayout>123...</Linearlayout>
+
 ## Là gì? dùng trong trường hợp nào
 
 Generic
 Singletone
 SOLID
-Dragger
+Dagger
 
 Các bước vẽ trên GG Map
 Các bước Push Notification
 Thuật toán tìm đường đi ngắn nhất, qua nhiều điểm
 Thuật toán sắp xếp kho hàng
 
-- Khác nhau include và merge
 - FragA->add FragB a qua trạng thái nào-> replace B with C B qua trạng thái nào->popC thì C qua trạng thái nào và A như thế nào
 - nếu a bằng null gọi m a khác null gọi n ko dùng if
 - khi nào viewmodel bị huỷ
