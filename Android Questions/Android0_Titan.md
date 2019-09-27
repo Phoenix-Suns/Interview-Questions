@@ -201,7 +201,7 @@ annotations thirth library, like: dagger 2
 - val: Khai báo biến tĩnh. (Khởi tạo lúc chạy)
 - const val: Khai báo biến tĩnh. (khởi tạo lúc biên dịch)
 - lateinit: biến khởi tạo sau. (dùng cho var)
-- lazy: biến khởi tạo sau. (dùng cho val)
+- lazy: biến khởi tạo sau. (dùng cho val). được cấp lần đầu sử dụng (lazy by {}, giống get nhưng chỉ lấy lần đầu sử dụng)
 
 ## Rx
 
