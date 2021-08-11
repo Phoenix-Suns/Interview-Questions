@@ -19,8 +19,31 @@
   - bằng cách chỉ đưa ra các thuộc tính và phương thức cần thiết của đối tượng,
   - ẩn đi cách thức mà nó thực hiện.
 
-## MVVM, MVP, MVC là gì, khi nào dùng cái nào
+## MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào
 
+### MVC (Model View Control)
+
+Controller get Event from User
+1 Controller relate, control to multi View
+Controller control View + Model
+
+### MVVM (ModelView View Model)
+
+View: interactive with user, show infomation, gét user input.
+Model: handle with data, sqlite, file
+3 Layer.
+ViêwModel: connect View& ViewModel, handle demand from view.
+
+View get Event from User
+Multiple View mapping 1 ModelView
+View contain relation properties to ViewModel
+belong support technology, Need a libary to use
+
+### MVI: (Model View Intent)
+
+- View -> Intent -> ViewModel -> State -> View
+- ![mvc mvp mvvm](images/mvc_mvp_mvvm.jpg)
+- ![mvi](images/mvi.png)
 
 ## Singleton dùng để làm gì
 
