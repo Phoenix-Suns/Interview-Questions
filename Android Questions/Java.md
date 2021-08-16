@@ -21,11 +21,18 @@
 
 ## MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào
 
+MVC: 1 Controler xử lý nhiều View
+MVP: 1 Presenter xử lý 1 View, View giao tiếp trực tiếp vào Presenter
+MVVM: 1 View Model xử lý 1 View, View giao tiếp ViewModel thông qua giao thức hỗ trợ
+MVI: View giao tiếp ViewModel thông qua Intent và nhận State trả về
+
 ### MVC (Model View Control)
 
 Controller get Event from User
 1 Controller relate, control to multi View
 Controller control View + Model
+
+### MVP (Model View Presenter)
 
 ### MVVM (ModelView View Model)
 
