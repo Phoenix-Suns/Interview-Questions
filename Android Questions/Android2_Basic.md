@@ -2,14 +2,16 @@
 
 - [Câu hỏi Android Cơ bản](#câu-hỏi-android-cơ-bản)
   - [Viewholder là gì](#viewholder-là-gì)
+  - [Activity](#activity)
+  - [English:](#english)
+  - [Fragment](#fragment)
   - [phân biệt activity và fragment](#phân-biệt-activity-và-fragment)
     - [- Khi nào thì dùng Fragment, cho ví dụ trong thực tế](#--khi-nào-thì-dùng-fragment-cho-ví-dụ-trong-thực-tế)
-  - [Khi nào method onResume() được gọi?](#khi-nào-method-onresume-được-gọi)
   - [4 Component chính trong Android là gì](#4-component-chính-trong-android-là-gì)
   - [Phân biệt Implicit và Explicit Intent](#phân-biệt-implicit-và-explicit-intent)
   - [Phân biệt Service và IntentService](#phân-biệt-service-và-intentservice)
   - [Phân biệt Service, Intent Service, AsyncTask và Thread.](#phân-biệt-service-intent-service-asynctask-và-thread)
-  - [Trình bày LifeCycle của Activity](#trình-bày-lifecycle-của-activity)
+    - [Service Android 8.0](#service-android-80)
   - [Trình bày LifeCycle của Fragment](#trình-bày-lifecycle-của-fragment)
   - [Giải thích Back stack fragment manager](#giải-thích-back-stack-fragment-manager)
   - [Giải thích dp, dpi, pt, sp trong Android](#giải-thích-dp-dpi-pt-sp-trong-android)
@@ -47,6 +49,40 @@ Thiết kế cho Custom Adapter.
 Mô tả Item View và Dữ liệu trong RecyclerView.
 Giúp không cần dùng findViewId như trong ListView
 
+## Activity
+
+![activity lifecycle](images/activity_lifecycle.png)
+
+OnCreate - onStart (onRestart) - onResume
+OnPause - OnStop - onDestroy
+
+- OnCreate: Activity Tạo lần đầu.
+- OnStart: Activity hiển thị với User. xoay màn hình.
+- OnResume: Gọi khi sau khi activity hiển thị lần nữa, sau khi ẩn đi bởi onPause.
+
+- OnPause: Activity ẩn, nằm sau Activity khác (nhưng còn thấy, vd: ẩn sau FragmentDialog).
+- OnStop: Activity ẩn hoàn toàn với user. không thấy nó nữa.
+- OnDestroy: Activity bị giết bởi User hay Hệ thống.
+
+## English:
+
+- OnCreate: Call on Activity first create.
+Screen Rotate.
+- OnStart: Activity become visible to user.
+- OnResume:  After hidden, Visible Again to user.
+- OnPause: Activity hidden, below other Activity, but we can see it.
+- OnStop: Activity invisible to user. we can not see it.
+- OnDestroy: Activity had be kill by User, or System.
+
+## Fragment
+
+là UI Độc lập
+hiển thị 1 phần trong Activity
+có thể sử dụng nhiều lần.
+VD: nội dung của tab, a Dialog, a list, a ui of slider...
+
+Fragment là một phần giao diện người dùng hoặc hành vi của một ứng dụng. Fragment có thể được đặt trong Activity, nó có thể cho phép thiết kế activity với nhiều mô-đun. Có thể nói Fragment là một loại sub-Activity. Fragment cũng có layout của riêng của nó, cũng có các hành vi và vòng đời riêng.
+
 ## phân biệt activity và fragment
 
 Fragment là một phần giao diện người dùng hoặc hành vi của một ứng dụng. 
@@ -59,17 +95,12 @@ Fragment cũng có layout của riêng của nó, cũng có các hành vi và v�
 là UI Độc lập, hiển thị 1 phần trong Activity, có thể sử dụng nhiều lần.
 Ví dụ: nội dung của tab, a Dialog, a list, a ui of slider...
 
-E:
+English:
 We need a independent ui, to display on activity.
 It a part of Activity.
 Modular section of Activity.
 
 Content of a tab, a Dialog, a list, a ui of slider...
-
-## Khi nào method onResume() được gọi?
-
-onResume() là một trong những activity lifecycle method. 
-Gọi khi sau khi activity hiển thị lần nữa, sau khi ẩn đi bởi onPause.
 
 ## 4 Component chính trong Android là gì
 
@@ -101,7 +132,7 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 
 ## Phân biệt Service, Intent Service, AsyncTask và Thread.
 
-- Service là một thành phần được sử dụng để thực hiện các tác vụ ở background ví dụ như chơi nhạc. Nó không có giao diện người dùng (user interface). Service có thể chạy ở trong background vô thời hạn ngay cả khi ứng dụng bị hủy.
+- Service là một thành phần được sử dụng để thực hiện các tác vụ ở background ví dụ như chơi nhạc. Nó không có giao diện người dùng (user interface). Service có thể chạy ở trong background vô thời hạn ngay cả khi ứng dụng bị hủy. 
 - AsyncTask cho phép bạn thực hiện các công việc bất đồng bộ ở background thread và publish kết quả lên trên UI thread mà không yêu cầu bạn phải xử lý cách các thread hay handler hoạt động.
 - IntentService là một loại Service để xử lý lần lượt các yêu cầu bất đồng bộ (thông qua Intent) ở background thread. Client sẽ gửi yêu cầu thông qua việc gọi tới startService(Intent) và nó cũng không yêu cầu bạn phải "động tay động chân" tới việc xử lý thread / handler.
 - Một Thread là một luồng thực thi tuần tự trong một chương trình. Thread có thể được coi là một mini-process chạy ở trong main process.
@@ -111,20 +142,10 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 - Service: Là 1 Android Component, có thể Chạy Ngầm, ngay cả khi người dùng không tương tác. Chạy trong luồng chính.
 - AsyncTask: Thực hiện công việc ngoài luồng chính, chỉ trong khi người dùng còn tương tác ứng dụng.
 
-## Trình bày LifeCycle của Activity
+### Service Android 8.0
 
-![activity lifecycle](images/activity_lifecycle.png)
-
-OnCreate - onStart (onRestart) - onResume
-OnPause - OnStop - onDestroy
-
-- OnCreate: Call on Activity first create.
-Screen Rotate.
-- OnStart: Activity become visible to user.
-- OnResume:  After hidden, Visible Again to user.
-- OnPause: Activity hidden, below other Activity, but we can see it.
-- OnStop: Activity invisible to user. we can not see it.
-- OnDestroy: Activity had be kill by User, or System.
+- background service: Android 8.0 giới hạn tác vụ chạy nền, chỉ chạy vài phút 
+- foregroundService: chạy khi có Activity đang chạy, hay Notification
 
 ## Trình bày LifeCycle của Fragment
 
