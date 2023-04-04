@@ -132,7 +132,7 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 
 ## Phân biệt Service, Intent Service, AsyncTask và Thread.
 
-- Service là một thành phần được sử dụng để thực hiện các tác vụ ở background ví dụ như chơi nhạc. Nó không có giao diện người dùng (user interface). Service có thể chạy ở trong background vô thời hạn ngay cả khi ứng dụng bị hủy. 
+- Service là một thành phần được sử dụng để thực hiện các tác vụ ở background ví dụ như chơi nhạc. Nó không có giao diện người dùng (user interface).
 - AsyncTask cho phép bạn thực hiện các công việc bất đồng bộ ở background thread và publish kết quả lên trên UI thread mà không yêu cầu bạn phải xử lý cách các thread hay handler hoạt động.
 - IntentService là một loại Service để xử lý lần lượt các yêu cầu bất đồng bộ (thông qua Intent) ở background thread. Client sẽ gửi yêu cầu thông qua việc gọi tới startService(Intent) và nó cũng không yêu cầu bạn phải "động tay động chân" tới việc xử lý thread / handler.
 - Một Thread là một luồng thực thi tuần tự trong một chương trình. Thread có thể được coi là một mini-process chạy ở trong main process.
@@ -144,8 +144,8 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 
 ### Service Android 8.0
 
-- background service: Android 8.0 giới hạn tác vụ chạy nền, chỉ chạy vài phút 
-- foregroundService: chạy khi có Activity đang chạy, hay Notification
+- Background Service: Chạy độc lập, không cần giao diện. Giới hạn tác vụ chạy nền, chỉ chạy vài phút 
+- Foreground Service: chạy khi có Activity đang chạy, hay kèm Notification
 
 ## Trình bày LifeCycle của Fragment
 
