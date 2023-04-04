@@ -14,8 +14,8 @@
 
 ## Overview
 
-[ === Chú Ý ===]
-Architecture: Help design Robust, tesable apps
+**[ === Chú Ý ===]**
+**Architecture: Help design Robust, tesable apps**
 - Data Binding, LiveData: Tương tác View
 - Lifecycles: Quản lý vòng đời Activity, Fragment
 - Navigation: Điều hướng
@@ -26,13 +26,13 @@ Architecture: Help design Robust, tesable apps
 (giống JobScheduler, Alarm manager)
 - Compose: Xây dựng layout với kotlin
 
-Foundation: Provide Cross cutting functionality (chức năng cắt chéo)
+**Foundation: Provide Cross cutting functionality (chức năng cắt chéo)**
 - AppCompat
 - Android KTX
 - Multidex
 - Test
 
-Behavior: App Tích hợp với các dịch vụ android
+**Behavior: App Tích hợp với các dịch vụ android**
 - Download Manager
 - Media & playback
 - Notifications
@@ -41,7 +41,7 @@ Behavior: App Tích hợp với các dịch vụ android
 - Sharing
 - Slices
 
-UI: Dể dàng, thú vị khi sử dụng
+**UI: Dể dàng, thú vị khi sử dụng**
 - Animation & Transitions
 - Auto
 - Emoji

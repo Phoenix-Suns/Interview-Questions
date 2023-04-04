@@ -1,5 +1,27 @@
 # Câu hỏi phỏng vấn Java
 
+- [Câu hỏi phỏng vấn Java](#câu-hỏi-phỏng-vấn-java)
+  - [Liệt kê, giải thích 4 tính chất OOP](#liệt-kê-giải-thích-4-tính-chất-oop)
+  - [MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào](#mvvm-mvp-mvc-mvi-là-gì-khi-nào-dùng-cái-nào)
+    - [MVC (Model View Control)](#mvc-model-view-control)
+    - [MVP (Model View Presenter)](#mvp-model-view-presenter)
+    - [MVVM (ModelView View Model)](#mvvm-modelview-view-model)
+    - [MVI: (Model View Intent)](#mvi-model-view-intent)
+  - [Singleton dùng để làm gì](#singleton-dùng-để-làm-gì)
+  - [Khi nào dùng Interface hoặc Abstract Class](#khi-nào-dùng-interface-hoặc-abstract-class)
+  - [Liệt kê những trường hợp mà finally ko đc gọi](#liệt-kê-những-trường-hợp-mà-finally-ko-đc-gọi)
+  - [Java dùng pass-by-value hay pass-by-reference](#java-dùng-pass-by-value-hay-pass-by-reference)
+  - [Trình bày cách để break bên trong vòng lặp lòng nhau](#trình-bày-cách-để-break-bên-trong-vòng-lặp-lòng-nhau)
+  - [Cách hoán đổi 2 số a và b mà ko cần tạo thêm biến thứ 3](#cách-hoán-đổi-2-số-a-và-b-mà-ko-cần-tạo-thêm-biến-thứ-3)
+  - [Android Garbage collection hoạt động ntn](#android-garbage-collection-hoạt-động-ntn)
+  - [Khi nào 1 object sẵn sàng for Garbage collection hốt](#khi-nào-1-object-sẵn-sàng-for-garbage-collection-hốt)
+  - [Daemon Thread là gì](#daemon-thread-là-gì)
+  - [Sealed class, data class](#sealed-class-data-class)
+  - [S.O.L.I.D](#solid)
+  - [let, also, apply, with](#let-also-apply-with)
+  - [val, var, const, const val, lazy, lateinit](#val-var-const-const-val-lazy-lateinit)
+  - [Rx](#rx)
+
 ## Liệt kê, giải thích 4 tính chất OOP
 
 - Tính đóng gói (encapsulation)
@@ -145,5 +167,65 @@ Tự hủy cùng với ứng dụng.
 
 - StringBuilder vs String
 - StringBuilder vs StringBuffer
+
+## Sealed class, data class
+
+- Sealed class: là lớp trừu tượng (Abstract class - SubClass phải cùng file), mở rộng của Enum class (có thể sử dụng when)
+- Data Class: Lớp lưu trữ dữ liệu, khi khởi tạo phải có Properties
+
+## S.O.L.I.D
+
+S — Single Responsibility Principle
+O — Open Closed Principle
+L — Liskov Substitution Principle
+I — Interface Segregation Principle
+D — Dependency Inversion Principle
+
+S — Single Responsibility Principle (nhiệm vụ)
+class/module chỉ thực hiện một chức năng. Model, network, calculate...
+
+O — Open Closed Principle (thích nghi)
+code để có thể thích nghi với các yêu cầu mới mà không thay đổi code cũ. Dùng interace để thiết kế.
+
+L — Liskov Substitution (thay thế) Principle
+class con phải thay thế được class cha.
+Nếu lớp cha không giải quyết được lớp con, thì tạo lớp cha lớn hơn, để cả 2 cùng kế thừa.
+
+I — Interface Segregation (phân biệt) Principle
+nhiều interface thực hiện sẽ tốt hơn là ít interface chứa nhiều function. Ko phải implement ko cần thiết
+
+D — Dependency Inversion Principle (phụ thuộc)
+Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong Module
+
+## let, also, apply, with
+
+- with: để gọi nhiều phương thức(method) cùng 1 đối tượng.
+- let: để check null
+  - là một hàm phạm vi (scoping function):
+  - Sử dụng một biến trong một phạm vi cụ thể trong đoạn code.
+- apply: để Trả về Object (giống return function)
+  - extension function cho tất cả các loại Object.
+- also: để trả về Object gọi nó (return this)
+- run: kết hợp with & let
+
+## val, var, const, const val, lazy, lateinit
+
+- var: khai báo biến.
+- val: Khai báo biến tĩnh. (Khởi tạo lúc chạy)
+- const val: Khai báo biến tĩnh. (khởi tạo lúc biên dịch)
+- lateinit: biến khởi tạo sau. (dùng cho var)
+- lazy: biến khởi tạo sau. (dùng cho val). được cấp lần đầu sử dụng (lazy by {}, giống get nhưng chỉ lấy lần đầu sử dụng)
+
+## Rx
+
+- <http://reactivex.io/documentation/operators.html#creating>
+- just: subscribe item
+- from: subscribe từng item trong list
+- defer: subscribe item cuối cùng (???)
+- interval: subscribe item sau mỗi khoảng thời gian
+
+- map: Trả về phần tử độc lập
+- fatMap: Trả về các phần tử đồng thời
+
 
 ---
