@@ -21,6 +21,10 @@
   - [let, also, apply, with](#let-also-apply-with)
   - [val, var, const, const val, lazy, lateinit](#val-var-const-const-val-lazy-lateinit)
   - [Rx](#rx)
+  - [Design pattern MVC, MVP, MVVM, MVI](#design-pattern-mvc-mvp-mvvm-mvi)
+    - [Khi nào ViewModel Huỷ (onCleared)](#khi-nào-viewmodel-huỷ-oncleared)
+  - [Generic](#generic)
+  - [Singletone](#singletone)
 
 ## Liệt kê, giải thích 4 tính chất OOP
 
@@ -227,5 +231,61 @@ Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong 
 - map: Trả về phần tử độc lập
 - fatMap: Trả về các phần tử đồng thời
 
+## Design pattern MVC, MVP, MVVM, MVI
+
+![mvc mvp mvvm](images/mvc_mvp_mvvm.jpg)
+
+MVC: Model View Controller
+Controller tương tác trực tiếp View
+
+MVP: Model View Presenter
+Presenter tương tác View qua Interface (Event), Model
+Presenter tách biệt hoàn toàn View
+
+MVVM: Model View ViewModel
+Phụ thuộc công nghệ hỗ trợ
+ViewModel không quan hệ, tách biệt View
+View chứa thuộc tính quan hệ ViewModel
+
+MVI: Model View Intent
+Intent Ý định, hành động của User, hay ứng dụng
+Presenter hay ViewModel tương tác View qua Intent
+
+View: Hiển thị thông tin, tương Tác với User, lấy User Input
+Model: mô tả thông tin, chứa dữ liệu
+Controller, Presenter, ViewModel, Xử lý yêu cầu gởi đến, gởi trả thông tin về View hiển thị
+
+**English**
+
+MVVM: design pattern.
+View: interactive with user, show infomation, gét user input.
+Model: handle with data, sqlite, file
+3 Layer.
+ViêwModel: connect View& ViewModel, handle demand from view.
+
+View get Event from User
+Multiple View mapping 1 ModelView
+View contain relation properties to ViewModel
+belong support technology, Need a libary to use
+
+MVC:
+Controller get Event from User
+1 Controller relate, control to multi View
+Controller control View + Model
+Longger code
+
+### Khi nào ViewModel Huỷ (onCleared)
+
+Activity hoặc Fragment Destroy
+
+## Generic
+
+Sử dụng một class hoặc một implement theo cách chung chung
+Thường viết Extention, hoặc viết base class
+
+## Singletone
+
+Khởi tạo duy nhất 1 class
+Nếu dùng thì gọi lại khởi tạo đó
 
 ---
