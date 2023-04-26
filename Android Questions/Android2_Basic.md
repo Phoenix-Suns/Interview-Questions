@@ -3,8 +3,8 @@
 - [Câu hỏi Android Cơ bản](#câu-hỏi-android-cơ-bản)
   - [4 Component chính trong Android là gì](#4-component-chính-trong-android-là-gì)
   - [Activity](#activity)
-    - [What’s the difference between onCreate() and onStart()?](#whats-the-difference-between-oncreate-and-onstart)
-    - [How many ways to send data back from Activity B \> A](#how-many-ways-to-send-data-back-from-activity-b--a)
+    - [So sánh onCreate() và onStart()?](#so-sánh-oncreate-và-onstart)
+    - [Cách gởi Data từ Activity B \> A](#cách-gởi-data-từ-activity-b--a)
     - [Activity vs Fragment Activity vs AppCompatActivity](#activity-vs-fragment-activity-vs-appcompatactivity)
     - [Khi 1 activity đang chạy, ta nhấn nút Home thì activity đó đi vào những trạng thái nào](#khi-1-activity-đang-chạy-ta-nhấn-nút-home-thì-activity-đó-đi-vào-những-trạng-thái-nào)
     - [Khi 1 Activity đang chạy, ta chọn recent apps, quét qua để kill app đó thì activity đó đi vào những trạng thái nào](#khi-1-activity-đang-chạy-ta-chọn-recent-apps-quét-qua-để-kill-app-đó-thì-activity-đó-đi-vào-những-trạng-thái-nào)
@@ -16,10 +16,9 @@
     - [lúc nào onDestroy() được gọi mà không có onPause() và onStop()?](#lúc-nào-ondestroy-được-gọi-mà-không-có-onpause-và-onstop)
     - [tại sao chỉ nên gọi setContentView() trong onCreate()](#tại-sao-chỉ-nên-gọi-setcontentview-trong-oncreate)
   - [Fragment](#fragment)
-    - [phân biệt activity và fragment](#phân-biệt-activity-và-fragment)
     - [Trình bày LifeCycle của Fragment](#trình-bày-lifecycle-của-fragment)
-    - [- Khi nào thì dùng Fragment, cho ví dụ trong thực tế](#--khi-nào-thì-dùng-fragment-cho-ví-dụ-trong-thực-tế)
-    - [When should you use a Fragment, rather than an Activity?](#when-should-you-use-a-fragment-rather-than-an-activity)
+    - [phân biệt activity và fragment](#phân-biệt-activity-và-fragment)
+    - [Khi nào thì dùng Fragment, cho ví dụ trong thực tế. (Khi nào dùng Fragment thay cho Activity?)](#khi-nào-thì-dùng-fragment-cho-ví-dụ-trong-thực-tế-khi-nào-dùng-fragment-thay-cho-activity)
     - [Nếu thêm nhiều Fragment vào cùng 1 FrameLayout bằng FragmentManager thì thực tế hiển thị fragment nào, các fragment kia rơi vào trạng thái gì](#nếu-thêm-nhiều-fragment-vào-cùng-1-framelayout-bằng-fragmentmanager-thì-thực-tế-hiển-thị-fragment-nào-các-fragment-kia-rơi-vào-trạng-thái-gì)
     - [Giải thích Back stack fragment manager](#giải-thích-back-stack-fragment-manager)
   - [UI](#ui)
@@ -85,9 +84,6 @@ Xử lý giao tiếp Android và Người dùng
 4. Content Providers
 Xử lý dữ liệu, quản lý vấn đề
 
-5. Intent
-Tin nhắn, liên kết các Component lại
-
 ## Activity
 
 ![activity lifecycle](images/activity_lifecycle.png)
@@ -105,23 +101,31 @@ OnPause - OnStop - onDestroy
 
 - **English:**
 
-- OnCreate: Call on Activity first create.
-Screen Rotate.
+- OnCreate: Call on Activity first create. Screen Rotate.
 - OnStart: Activity become visible to user.
 - OnResume:  After hidden, Visible Again to user.
+
 - OnPause: Activity hidden, below other Activity, but we can see it.
 - OnStop: Activity invisible to user. we can not see it.
 - OnDestroy: Activity had be kill by User, or System.
 
-### What’s the difference between onCreate() and onStart()?
+### So sánh onCreate() và onStart()?
+
+OnCreate: gọi khi Activity khởi tạo lần đầu, 
+OnStart: gọi khi Activity hiển thị với người dùng.
+
+Khi User quay lại Activity, gọi OnRestart > OnResume. 
+Sau khi ứng dụng bị thu hồi bộ nhớ, gọi OnCreate lại.
+
+**English**
 
 OnCreate: call on Activity first create, 
 OnStart: Activity become visible to user.
 
 When user comeback Activity, call OnRestart then OnResume. 
-If app had been gabage memory, call OnCreate  again.
+If app had been gabage memory, call OnCreate again.
 
-### How many ways to send data back from Activity B > A
+### Cách gởi Data từ Activity B > A
 
 1. Intent
 put Extra to Inent, then start Activity with this Intent. 
@@ -154,7 +158,6 @@ editor.commit();
 - Activity là lớp cơ sở
 - Fragment Activity (extend Activity) có kèm quản lý fragment
 - AppCompatActivity (extend FragmentActivity) có 1 số hàm tương thích Api Cũ
-
 
 ### Khi 1 activity đang chạy, ta nhấn nút Home thì activity đó đi vào những trạng thái nào
 
@@ -199,9 +202,14 @@ onResume onStart: gọi nhiều lần, tốn tài nguyên
 là UI Độc lập
 hiển thị 1 phần trong Activity
 có thể sử dụng nhiều lần.
+có thể dùng như 1 màn hình riêng biệt
 VD: nội dung của tab, a Dialog, a list, a ui of slider...
 
 Fragment là một phần giao diện người dùng hoặc hành vi của một ứng dụng. Fragment có thể được đặt trong Activity, nó có thể cho phép thiết kế activity với nhiều mô-đun. Có thể nói Fragment là một loại sub-Activity. Fragment cũng có layout của riêng của nó, cũng có các hành vi và vòng đời riêng.
+
+### Trình bày LifeCycle của Fragment
+
+![fragment lifecycle](images/fragment_lifecycle.png)
 
 ### phân biệt activity và fragment
 
@@ -210,34 +218,11 @@ Fragment có thể được đặt trong Activity, nó có thể cho phép thi�
 Có thể nói Fragment là một loại sub-Activity. 
 Fragment cũng có layout của riêng của nó, cũng có các hành vi và vòng đời riêng.
 
-### Trình bày LifeCycle của Fragment
+### Khi nào thì dùng Fragment, cho ví dụ trong thực tế. (Khi nào dùng Fragment thay cho Activity?)
 
-![fragment lifecycle](images/fragment_lifecycle.png)
-
-### - Khi nào thì dùng Fragment, cho ví dụ trong thực tế
-
-là UI Độc lập, hiển thị 1 phần trong Activity, có thể sử dụng nhiều lần.
+Hiển thị 1 phần trong Activity, có thể sử dụng nhiều lần.
+Hiển thị 1 màn hình trong Single Activity.
 Ví dụ: nội dung của tab, a Dialog, a list, a ui of slider...
-
-**English:**
-
-We need a independent ui, to display on activity.
-It a part of Activity.
-Modular section of Activity.
-
-Content of a tab, a Dialog, a list, a ui of slider...
-
-### When should you use a Fragment, rather than an Activity?
-
-Fragment là một phần giao diện người dùng hoặc hành vi của một ứng dụng. Fragment có thể được đặt trong Activity, nó có thể cho phép thiết kế activity với nhiều mô-đun. Có thể nói Fragment là một loại sub-Activity. Fragment cũng có layout của riêng của nó, cũng có các hành vi và vòng đời riêng.
-
-**English:**
-
-We need a independent ui, to display on activity. 
-It a part of Activity.
-Modular section of Activity.
-
-Content of a tab, a Dialog, a list, a ui of slider...
 
 ### Nếu thêm nhiều Fragment vào cùng 1 FrameLayout bằng FragmentManager thì thực tế hiển thị fragment nào, các fragment kia rơi vào trạng thái gì
 
@@ -267,7 +252,12 @@ transaction.attach(fragment);
 
 ### Constrain layout
 
-ConstraintLayout allows you to create large and complex layouts with a flat view hierarchy (no nested view groups). It's similar to RelativeLayout in that all views are laid out according to relationships between sibling views and the parent layout, but it's more flexible than RelativeLayout and easier to use with Android Studio's Layout Editor.
+Là Container View,
+View con có mối quan hệ, ràng buộc với nhau và Parent View.
+Tương tự như RelativeLayout, nhưng linh hoạt hơn.
+Dễ sử dụng với Layout Editor của Android Studio.
+
+**English**
 
 It is a Container View, 
 All Child View have a relationship, constrain together and parent layout.
@@ -286,7 +276,7 @@ Easy to use with Android Studio's Layout Editor.
 
 ### làm sao biết view nào tiêu tốn nhiều tài nguyên ( dùng cái gì)
 
-- Profiler check thông tin tài nguyên hệ thống (cpu, ram) android khi mở View đó
+- Profiler: check thông tin tài nguyên hệ thống (cpu, ram) android khi mở View đó
 
 ### So sánh LinearLayout và ConstrainLayout
 
@@ -295,8 +285,8 @@ Easy to use with Android Studio's Layout Editor.
 
 ### Sự khác nhau giữ View.GONE và View.INVISIBLE
 
-- Gone: View biến mất, không giữ kích thước hiện tại.
-- Invisible: View biến mất, vẫn giữ kích thước hiện tại.
+- Gone: View biến mất, không giữ kích thước.
+- Invisible: View biến mất, vẫn giữ kích thước.
 
 ### Giải thích dp, dpi, pt, sp trong Android
 
@@ -331,11 +321,11 @@ SnapHelper Decoration
 
 #### Thay đổi 1 Phần ViewHolder
 
-- onBindViewHolder payloads
+onBindViewHolder payloads
 
 #### RecylerView Kiểm tra 2 item không trùng
 
-- DiffUtil
+DiffUtil
 
 ## Service
 
@@ -346,15 +336,15 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 
 ### Phân biệt Service, Intent Service, AsyncTask và Thread.
 
-- Service là một thành phần được sử dụng để thực hiện các tác vụ ở background ví dụ như chơi nhạc. Nó không có giao diện người dùng (user interface).
-- AsyncTask cho phép bạn thực hiện các công việc bất đồng bộ ở background thread và publish kết quả lên trên UI thread mà không yêu cầu bạn phải xử lý cách các thread hay handler hoạt động.
-- IntentService là một loại Service để xử lý lần lượt các yêu cầu bất đồng bộ (thông qua Intent) ở background thread. Client sẽ gửi yêu cầu thông qua việc gọi tới startService(Intent) và nó cũng không yêu cầu bạn phải "động tay động chân" tới việc xử lý thread / handler.
-- Một Thread là một luồng thực thi tuần tự trong một chương trình. Thread có thể được coi là một mini-process chạy ở trong main process.
+- Service: Là 1 Android Component. dùng để thực hiện các tác vụ ngầm ở background, ví dụ như chơi nhạc. Chạy trong Main Theard. Nó không có giao diện người dùng (user interface).
+- IntentService: là 1 Android Service. Tự dừng lại sau khi trả về kết quả, hay hàm **“onHandleIntent”** xử lý xong.
+- Thread: là một luồng thực thi tuần tự trong một chương trình. Thread có thể được coi là một mini-process chạy ở trong main process.
+- AsyncTask: Thực hiện các công việc bất đồng bộ. Chạy trong background thread và publish kết quả lên trên UI thread. Mà Không yêu cầu bạn phải xử lý cách các thread hay handler hoạt động.
 
-- Shorter:
-<https://developer.android.com/guide/components/services>
-- Service: Là 1 Android Component, có thể Chạy Ngầm, ngay cả khi người dùng không tương tác. Chạy trong luồng chính.
-- AsyncTask: Thực hiện công việc ngoài luồng chính, chỉ trong khi người dùng còn tương tác ứng dụng.
+- Service: Là 1 Android Component, có thể Chạy Ngầm, ngay cả khi người dùng không tương tác. Chạy trong Main Thread.
+- AsyncTask: Chạy trong Background Thread, chỉ chạy trong khi người dùng còn tương tác ứng dụng.
+
+- https://developer.android.com/guide/components/services
 
 ### Service Android 8.0
 
@@ -383,7 +373,6 @@ Quản lý, điều tiết nhiều Thread
 
 - Explicit Intent: tường minh, gọi trực tiếp tên ứng dụng
 - Implicit Intent: ẩn ý, gọi chung chung, ứng dụng nào chạy thì chạy
-
 
 ## Giải thích về 4 launchmode: standard, singleTop, singleTask, singleInstance
 
@@ -514,7 +503,6 @@ annotations thirth library, like: dagger, hilt
 
 - https://developers.google.com/maps/documentation/android-sdk/polygon-tutorial
 
-
 ## Các bước Push Notification Firebase
 
 - Tạo project, lấy key trên Firebase Console
@@ -528,7 +516,7 @@ annotations thirth library, like: dagger, hilt
 - Tạo project, lấy key trên Google Cloud Console
 - Tạo danh sách sản phẩm
 - Đăng kí key trong Manifest
-- Cài Map Dependencies trong Gradle
+- Cài Dependencies trong Gradle
 - Khi User nhấn thanh toán: 
   - lấy danh sách sản phẩm về, hiện lên
   - User thanh toán sản phẩm, Kiểm tra: thành công, thất bại, pedding
