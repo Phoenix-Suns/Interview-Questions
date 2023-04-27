@@ -17,11 +17,11 @@
     - Data Source
     - Mapper (Network, Room to Model)
 
-![](clear_architecture_contain.png)
+![](images/clear_architecture_contain.png)
 
 ## Data Flow
 
-![](clear_architecture_data_flow.png)
+![](images/clear_architecture_data_flow.png)
 
 1. UI gọi phương thức từ Presenter/ViewModel.
 2. Presenter/ViewModel thực hiện Use case.
@@ -31,7 +31,7 @@
 
 ## Dependency Rule
 
-![](clear_architecture_dependency.png)
+![](images/clear_architecture_dependency.png)
 
 ## Reference
 

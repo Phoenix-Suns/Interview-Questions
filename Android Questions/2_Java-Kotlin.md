@@ -1,6 +1,6 @@
-# Câu hỏi phỏng vấn Java
+# Java - Kotlin
 
-- [Câu hỏi phỏng vấn Java](#câu-hỏi-phỏng-vấn-java)
+- [Java - Kotlin](#java---kotlin)
   - [Liệt kê, giải thích 4 tính chất OOP](#liệt-kê-giải-thích-4-tính-chất-oop)
   - [MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào](#mvvm-mvp-mvc-mvi-là-gì-khi-nào-dùng-cái-nào)
     - [MVC (Model View Control)](#mvc-model-view-control)
