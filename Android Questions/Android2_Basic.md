@@ -1,10 +1,6 @@
----
-type: Journal
----
+# Câu hỏi Android Cơ bản
 
-# Android Cơ bản
-
-- [Android Cơ bản](#android-cơ-bản)
+- [Câu hỏi Android Cơ bản](#câu-hỏi-android-cơ-bản)
   - [4 Component chính trong Android là gì](#4-component-chính-trong-android-là-gì)
   - [Activity](#activity)
     - [So sánh onCreate() và onStart()?](#so-sánh-oncreate-và-onstart)
@@ -69,11 +65,6 @@ type: Journal
   - [Các bước vẽ trên GG Map](#các-bước-vẽ-trên-gg-map)
   - [Các bước Push Notification Firebase](#các-bước-push-notification-firebase)
   - [Các bước thanh toán google billing](#các-bước-thanh-toán-google-billing)
-  - [Lập lịch, quản lý tác vụ ngầm](#lập-lịch-quản-lý-tác-vụ-ngầm)
-    - [Work Manager (Jetpack)](#work-manager-jetpack)
-    - [JobScheduler (android 5)](#jobscheduler-android-5)
-    - [Alarm manager](#alarm-manager)
-  - [Android Jetpack](#android-jetpack)
   - [Các câu hỏi khác](#các-câu-hỏi-khác)
     - [...Là gì? dùng trong trường hợp nào](#là-gì-dùng-trong-trường-hợp-nào)
   - [Reference](#reference)
@@ -533,36 +524,6 @@ annotations thirth library, like: dagger, hilt
   - Nếu Pedding thì hiện thông báo, khi mở app Sẽ consume sản phẩm
 
 - https://viblo.asia/p/in-app-purchase-trong-android-phan-2-naQZRMwjKvx
-
-## Lập lịch, quản lý tác vụ ngầm
-
-### Work Manager (Jetpack)
-
-Work Manager là một thư viện được thiết kế cho việc lập lịch và quản lý các tác vụ ngầm (giống JobScheduler)
-Dể sử dụng, dể truy cập, dể huỷ, hỗ trợ mọi android 14 trở lên
-
-### JobScheduler (android 5)
-
-Lên lịch, hẹn giờ để thực hiện tác vụ: (như: AlarmManager(không khuyến khích sử lý network))
-- Task khi kết nối nguồn điện, khi kết nối Internet
-- Task chạy mỗi ngày 1 lần
-
-### Alarm manager
-
-Lên lịch, hẹn giờ để thực hiện tác vụ. Kết nối với Alarm Service của hệ thống
-
-## Android Jetpack
-
-Architecture: Giúp thiết kế, dễ test cho Ứng dụng. Help design Robust, tesable apps
-- Data Binding, LiveData: Tương tác View
-- Lifecycles: Quản lý vòng đời Activity, Fragment
-- Navigation: Điều hướng
-- Paging
-- Room: Lưu dữ liệu
-- ViewModel: Phân chia sử lý logic
-- Work Manager: lập lịch và quản lý các tác vụ ngầm.
-(giống JobScheduler, Alarm manager)
-- Compose: Xây dựng layout với kotlin
 
 ## Các câu hỏi khác
 ### ...Là gì? dùng trong trường hợp nào
