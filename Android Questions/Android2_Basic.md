@@ -1,4 +1,12 @@
+<<<<<<<< HEAD:Android Questions/Android2_Basic.md
 # Câu hỏi Android Cơ bản
+========
+---
+type: Journal
+---
+
+# Android Cơ bản
+>>>>>>>> 04395e70f4c9d25a82ef3f255b578110809d35ff:Android Questions/1_Android_Basic.md
 
 - [Câu hỏi Android Cơ bản](#câu-hỏi-android-cơ-bản)
   - [4 Component chính trong Android là gì](#4-component-chính-trong-android-là-gì)
