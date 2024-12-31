@@ -7,6 +7,7 @@
   - [Android 11](#android-11)
   - [Android 12](#android-12)
   - [Android 13](#android-13)
+  - [Android 14](#android-14)
   - [Preference](#preference)
 
 
@@ -46,6 +47,17 @@ User Tắt Camera, mic trong Quick settings
 ## Android 13
 
 Users có thể tắt Foreground Service
+JobScheduler có thể tải trước trước khi khởi động ứng dụng
+JobInfo.Builder.setPrefetch()
+Nhóm chế độ chờ ứng dụng "bị hạn chế" dùng pin
+Hạn chế Thông báo ưu tiên được gởi qua Firebase Cloud Message (FCM), thông báo không quan trọng nên để độ ưu tiên normal
+Thêm quyền hiện thông báo
+Có thể Ẩn nội dung trong copy cut Clipboard
+bỏ android:sharedUserId trong manifesh
+
+## Android 14
+
+
 
 ---
 
