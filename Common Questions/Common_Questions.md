@@ -5,7 +5,7 @@
 Chú trọng kinh nghiệm làm việc.
 Sở thích ngắn gọn.
 
-Tôi 34 tuổi, đã kết hôn. Tôi sinh ra và lớn lên ở HCM. Tốt nghiệp Cao đẳng ngành CNTT năm 2012. Chuyên ngành theo đuổi là Mobile Developer. Tôi có 8 năm kinh nghiệm làm lập trình viên, và 6 năm kinh nghiệm lập trình Android, từng làm qua iOS và React-Native. Tôi thích bơi lội, cầu lông, chạy bộ, chơi game, và xem phim.
+Tôi 28 tuổi, còn độc thân. Tôi sinh ra và lớn lên ở HCM. Tốt nghiệp Cao đẳng ngành CNTT năm 2012. Chuyên ngành theo đuổi là Mobile Developer. Tôi có 5 năm kinh nghiệm làm lập trình viên, và 3 năm kinh nghiệm lập trình Android, từng làm qua iOS và React-Native. Tôi thích bơi lội, cầu lông, chạy bộ, chơi game, và xem phim.
 
 ## Tại sao bạn muốn công việc này
 
