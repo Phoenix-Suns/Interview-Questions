@@ -8,14 +8,13 @@ vòng 2: Live coding interview với một team member bên Sing. Thích ngôn n
 
 - [Cau Hoi Tieng Anh](#cau-hoi-tieng-anh)
   - [Tell me about yourself. (Hãy kể tôi nghe về bản thân bạn.)](#tell-me-about-yourself-hãy-kể-tôi-nghe-về-bản-thân-bạn)
-  - [Tại sao bỏ việc](#tại-sao-bỏ-việc)
+  - [Why are you leaving or have left your job? (Tại sao bạn rời bỏ công việc cũ?)](#why-are-you-leaving-or-have-left-your-job-tại-sao-bạn-rời-bỏ-công-việc-cũ)
   - [Điểm mạnh (greatest strength)](#điểm-mạnh-greatest-strength)
   - [Điểm yếu (greatest weakness)](#điểm-yếu-greatest-weakness)
   - [Bạn mong muốn gì ở công ty](#bạn-mong-muốn-gì-ở-công-ty)
   - [What were your responsibilities? (Trách nhiệm của bạn là gì?)](#what-were-your-responsibilities-trách-nhiệm-của-bạn-là-gì)
   - [What major challenges and problems did you face? How did you handle them? (Có thử thách hay rắc rối nào lớn mà bạn từng đối mặt không? Bạn đã xử lí nó như thế nào?)](#what-major-challenges-and-problems-did-you-face-how-did-you-handle-them-có-thử-thách-hay-rắc-rối-nào-lớn-mà-bạn-từng-đối-mặt-không-bạn-đã-xử-lí-nó-như-thế-nào)
   - [What did you like or dislike about your previous job? (Điều gì bạn thích/ không thích về công việc cũ?)](#what-did-you-like-or-dislike-about-your-previous-job-điều-gì-bạn-thích-không-thích-về-công-việc-cũ)
-  - [Describe a difficult work situation / project and how you overcame it. (Mô tả một tình huống hay dự án công việc khó khăn và cách bạn vượt qua nó.)](#describe-a-difficult-work-situation--project-and-how-you-overcame-it-mô-tả-một-tình-huống-hay-dự-án-công-việc-khó-khăn-và-cách-bạn-vượt-qua-nó)
   - [How do you evaluate success? (Bạn định giá thành công như thế nào?)](#how-do-you-evaluate-success-bạn-định-giá-thành-công-như-thế-nào)
   - [What was the biggest accomplishment/ failure in this position? (Thành tựu/ thất bại lớn nhất của bạn là gì trong vị trí công việc này?)](#what-was-the-biggest-accomplishment-failure-in-this-position-thành-tựu-thất-bại-lớn-nhất-của-bạn-là-gì-trong-vị-trí-công-việc-này)
   - [How do you handle stress and pressure? (Bạn đối phó với stress và áp lực như thế nào?)](#how-do-you-handle-stress-and-pressure-bạn-đối-phó-với-stress-và-áp-lực-như-thế-nào)
@@ -23,8 +22,6 @@ vòng 2: Live coding interview với một team member bên Sing. Thích ngôn n
   - [Why do you want this job? (Tại sao bạn muốn làm công việc này?)](#why-do-you-want-this-job-tại-sao-bạn-muốn-làm-công-việc-này)
   - [What are your goals for the future? (Mục tiêu cho tương lại của bạn là gì?)](#what-are-your-goals-for-the-future-mục-tiêu-cho-tương-lại-của-bạn-là-gì)
   - [Why should we hire you? (Tại sao chúng tôi phải thuê bạn?)](#why-should-we-hire-you-tại-sao-chúng-tôi-phải-thuê-bạn)
-  - [Why are you leaving or have left your job? (Tại sao bạn rời bỏ công việc cũ?)](#why-are-you-leaving-or-have-left-your-job-tại-sao-bạn-rời-bỏ-công-việc-cũ)
-  - [Tell me about yourself. (Hãy kể tôi nghe về bản thân bạn.)](#tell-me-about-yourself-hãy-kể-tôi-nghe-về-bản-thân-bạn-1)
   - [What are you passionate about? (Bạn nhiệt huyết về cái gì?)](#what-are-you-passionate-about-bạn-nhiệt-huyết-về-cái-gì)
   - [Who was your best boss and who was the worst? (Ai là sếp tốt nhất và tệ nhất của bạn?)](#who-was-your-best-boss-and-who-was-the-worst-ai-là-sếp-tốt-nhất-và-tệ-nhất-của-bạn)
   - [What are your salary requirements? (Yêu cầu về lương bổng của bạn là gì?)](#what-are-your-salary-requirements-yêu-cầu-về-lương-bổng-của-bạn-là-gì)
@@ -56,7 +53,7 @@ Tôi 34 tuổi, đã kết hôn. Tôi sinh ra và lớn lên ở HCM. Tốt nghi
 
 I am 34 years old, had married. I born and grow up on HCM City. Graduate in 2012 with IT major. Had 8 year experience in developer and 6 year in android, working with IOs too. I like play video game, watching video, facebook, youtube.
 
-## Tại sao bỏ việc
+## Why are you leaving or have left your job? (Tại sao bạn rời bỏ công việc cũ?)
 Tại sao bạn muốn công việc này
 
 - khi nhận thấy môi trường làm việc và chế độ ở đây rất tốt.
@@ -72,26 +69,13 @@ I had read working description, and company website. This position attrack me, m
 Vì sao chúng tôi thuê bạn
 Em có gì đặc biệt
 
-- Sáng tạo
-- Tính linh hoạt
-- Mềm dẻo
-- Tập trung
-- Sáng kiến
-- Trung thực
-- Tận tâm
-- Chính trực
-- Tinh thần cầu tiến, luôn học hỏi.
-- Giải quyết vấn đề
-
 - Yêu thích tìm hiểu, học hỏi công nghệ mới.
 - Luôn tìm cách tối ưu để giải quyết vấn đề.
 - Thích làm việc theo nhóm, để trao đổi với các thành viên. Nhưng vẫn có thể làm việc độc lập.
-- và trung thực.
 
 - I Like find out, learn new technologies. 
 - try to optimate and solve the problem.
 - like group working, communicate with other member. But still working alone
-- and honestly
 
 ## Điểm yếu (greatest weakness)
 
@@ -109,32 +93,44 @@ Em có gì đặc biệt
 
 ## Bạn mong muốn gì ở công ty
 
-- được cống hiến khả năng và sức lực cho công ty.
-- đóng góp được nhiều thành tựu nổi bật cho công ty.
-- mỗi ngày đều được làm những gì mình yêu thích.
-- muốn phát triển cao hơn nữa trong lĩnh vực ngành.
-- học hỏi, trau dồi kĩ năng nhiều hơn nữa từ việc làm việc với các đồng nghiệp, các lãnh đạo và chuyên gia IT của doanh nghiệp
+- Tôi hy vọng được làm việc trong một môi trường chuyên nghiệp và năng động, nơi tôi có thể áp dụng các kỹ năng chuyên môn của mình, cập nhật các công nghệ mới nhất và không ngừng phát triển. 
+Bên cạnh đó, tôi cũng kỳ vọng nhận được sự hỗ trợ và định hướng từ công ty để phát triển bản thân và đóng góp nhiều hơn cho tổ chức.
 
-"Tôi hy vọng được làm việc trong một môi trường chuyên nghiệp và năng động, nơi tôi có thể áp dụng các kỹ năng chuyên môn của mình, cập nhật các công nghệ mới nhất và không ngừng phát triển. 
-Bên cạnh đó, tôi cũng kỳ vọng nhận được sự hỗ trợ và định hướng từ công ty để phát triển bản thân và đóng góp nhiều hơn cho tổ chức."
-
-I hope to work in a professional and dynamic environment where I can apply my technical skills, stay updated with the latest technologies, and continuously grow.
+- I hope to work in a professional and active environment where I can apply my technical skills, stay updated with the latest technologies, and continuously grow.
 Besides, I also expect to receive support and guidance from the company to develop myself and contribute more to the organization.
 
 ## What were your responsibilities? (Trách nhiệm của bạn là gì?)
 
-Trong vai trò trước đây của tôi, trách nhiệm chính bao gồm phát triển và duy trì các ứng dụng Android bằng Kotlin, tối ưu hiệu suất và áp dụng các công nghệ mới. Tôi làm việc với các nhóm UI/UX designers và backend developers để mang lại trải nghiệm người dùng tốt nhất.
+- Trong vai trò trước đây của tôi, trách nhiệm chính bao gồm phát triển và duy trì các ứng dụng Android bằng Kotlin, tối ưu hiệu suất và áp dụng các công nghệ mới. Tôi làm việc với các nhóm UI/UX designers và backend developers để mang lại trải nghiệm người dùng tốt nhất.
 
 Ngoài ra, tôi chịu trách nhiệm debug, khắc phục sự cố, tối ưu hóa hiệu suất ứng dụng và tích hợp các API bên thứ ba. Tôi cũng cải thiện quy trình phát triển phần mềm.
 
-In my previous role, my main responsibilities included developing and maintaining Android applications using Kotlin, optimal performance and apply new technologies. I worked with other teams such as UI/UX designers and backend developers to bring the best user experience.
+- In my previous role, my main responsibilities included developing and maintaining Android applications using Kotlin, optimal performance and apply new technologies. I worked with other teams such as UI/UX designers and backend developers to bring the best user experience.
 
 In addition, I was responsible for debugging, troubleshooting, optimizing application performance and integrating third-party APIs. I also to improving the software development process.
 
 ## What major challenges and problems did you face? How did you handle them? (Có thử thách hay rắc rối nào lớn mà bạn từng đối mặt không? Bạn đã xử lí nó như thế nào?)
 
+Giữ UI giống thiết kế, UX dễ sử dụng cho người dùng. Và ứng dụng android hoạt động trơn tru, không giật lag, nóng máy.
+
+Keep the UI the same design, UX easy to use for users. And the Android application works smoothly, no lag, no overheating.
+
 ## What did you like or dislike about your previous job? (Điều gì bạn thích/ không thích về công việc cũ?)
-## Describe a difficult work situation / project and how you overcame it. (Mô tả một tình huống hay dự án công việc khó khăn và cách bạn vượt qua nó.)
+
+Thích:
+- Công ty nhỏ nên ra quyết định, triển khai tính năng mới nhanh
+- Dự án nhỏ nên dể áp dụng công nghệ mới như Android Jetpack
+
+Không thích: 
+- Công ty cũ của tôi có nhiều dự án thú vị, nhưng vì quy mô nhỏ nên cơ hội thử thách với những dự án lớn hơn còn hạn chế.
+
+Likes:
+- Small company to make decisions, deploy new features fast
+- Small projects so easy to apply new technologies like Android Jetpack
+
+Dislikes:
+- My old company had many interesting projects, but because of its small size, the opportunity to challenge with larger projects was limited.
+
 ## How do you evaluate success? (Bạn định giá thành công như thế nào?)
 ## What was the biggest accomplishment/ failure in this position? (Thành tựu/ thất bại lớn nhất của bạn là gì trong vị trí công việc này?)
 ## How do you handle stress and pressure? (Bạn đối phó với stress và áp lực như thế nào?)
@@ -142,8 +138,7 @@ In addition, I was responsible for debugging, troubleshooting, optimizing applic
 ## Why do you want this job? (Tại sao bạn muốn làm công việc này?)
 ## What are your goals for the future? (Mục tiêu cho tương lại của bạn là gì?)
 ## Why should we hire you? (Tại sao chúng tôi phải thuê bạn?)
-## Why are you leaving or have left your job? (Tại sao bạn rời bỏ công việc cũ?)
-## Tell me about yourself. (Hãy kể tôi nghe về bản thân bạn.)
+
 ## What are you passionate about? (Bạn nhiệt huyết về cái gì?)
 ## Who was your best boss and who was the worst? (Ai là sếp tốt nhất và tệ nhất của bạn?)
 ## What are your salary requirements? (Yêu cầu về lương bổng của bạn là gì?)
