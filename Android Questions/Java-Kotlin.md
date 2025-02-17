@@ -22,6 +22,16 @@
     - [Backpressure là gì](#backpressure-là-gì)
     - [- Observable, Flowable, Single, Maybe, và Completable](#--observable-flowable-single-maybe-và-completable)
     - [Các loại Schedulers](#các-loại-schedulers)
+    - [RxJava thành Coroutine](#rxjava-thành-coroutine)
+  - [Coroutines](#coroutines)
+    - [Launch vs Async](#launch-vs-async)
+    - [Structured Concurrency](#structured-concurrency)
+    - [Dispatcher trong Coroutines](#dispatcher-trong-coroutines)
+    - [suspend function](#suspend-function)
+    - [bắt lỗi trong Coroutine](#bắt-lỗi-trong-coroutine)
+    - [SupervisorJob và Job](#supervisorjob-và-job)
+    - [chạy nhiều tác vụ](#chạy-nhiều-tác-vụ)
+    - [Dùng Coroutines thay vì RxJava](#dùng-coroutines-thay-vì-rxjava)
   - [MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào](#mvvm-mvp-mvc-mvi-là-gì-khi-nào-dùng-cái-nào)
     - [MVC (Model View Control)](#mvc-model-view-control)
     - [MVP (Model View Presenter)](#mvp-model-view-presenter)
@@ -221,6 +231,150 @@ Flowable.create({ emitter ->
 - Schedulers.single() → Chạy trên một thread duy nhất (tốt cho các tác vụ tuần tự).
 - Schedulers.newThread() → Luôn tạo một thread mới cho mỗi tác vụ.
 - Schedulers.computation() → Xử lý tác vụ tính toán (tính toán phức tạp, xử lý ảnh).
+
+### RxJava thành Coroutine
+
+Sử dụng suspendCoroutine hoặc rxSingle
+
+```kotlin
+suspend fun getUserData(): User {
+    return rxSingle { apiService.getUser() }.await()
+}
+```
+
+## Coroutines
+
+- Coroutines giúp xử lý bất đồng bộ nhẹ hơn và dễ đọc hơn so với Thread
+- Không cần tạo một Thread mới cho mỗi tác vụ
+- Structured Concurrency → Dễ quản lý vòng đời, tránh memory leak.
+
+### Launch vs Async
+
+- launch - bất đồng bộ, Không có giá trị trả về
+- async - bất đồng bộ, Có giá trị trả về
+- runBlocking - đồng bộ, block thread chính
+
+```kotlin
+// launch - Không có giá trị trả về
+val job = GlobalScope.launch {
+    delay(1000)
+    println("Launch done")
+}
+
+// async - Có giá trị trả về
+val deferred = GlobalScope.async {
+    delay(1000)
+    "Async result"
+}
+println(deferred.await()) // Lấy kết quả từ async
+```
+
+### Structured Concurrency 
+
+giúp đảm bảo rằng tất cả các coroutines con sẽ bị hủy khi coroutine cha bị hủy, giúp tránh memory leaks và dangling coroutines
+
+```kotlin
+class MyViewModel : ViewModel() {
+    private val viewModelScope = CoroutineScope(Dispatchers.Main)
+
+    fun fetchData() {
+        viewModelScope.launch {
+            val data = fetchFromNetwork()
+            println(data)
+        }
+    }
+    
+    override fun onCleared() {
+        super.onCleared()
+        viewModelScope.cancel()  // Hủy tất cả coroutines khi ViewModel bị hủy
+    }
+}
+```
+
+### Dispatcher trong Coroutines
+
+Dispatchers.Main:	Chạy trên UI thread -	Cập nhật UI
+Dispatchers.IO:	Chạy trên I/O thread -	Gọi API, đọc/ghi database
+Dispatchers.Default:	Dành cho tác vụ nặng (CPU-bound) -	Xử lý dữ liệu lớn, mã hóa
+Dispatchers.Unconfined:	Chạy trên thread hiện tại -	Không khuyến khích sử dụng
+
+```kotlin
+CoroutineScope(Dispatchers.IO).launch {
+    val result = fetchData()
+    withContext(Dispatchers.Main) { updateUI(result) }
+}
+```
+
+### suspend function
+
+Hàm chỉ được gọi trong CoroutineScope
+
+```kotlin
+suspend fun fetchData(): String {
+    delay(1000)  // Giả lập API call
+    return "Data loaded"
+}
+
+// Gọi từ Coroutine
+CoroutineScope(Dispatchers.IO).launch {
+    val data = fetchData()
+    println(data)
+}
+```
+
+### bắt lỗi trong Coroutine
+
+Sử dụng try-catch hoặc CoroutineExceptionHandler
+
+```kotlin
+CoroutineScope(Dispatchers.IO).launch {
+    try {
+        val data = fetchData()
+        println(data)
+    } catch (e: Exception) {
+        println("Error: ${e.message}")
+    }
+}
+```
+
+### SupervisorJob và Job
+
+- Job: Nếu một coroutine con lỗi, toàn bộ coroutine cha bị hủy.	
+- SupervisorJob: Nếu một coroutine con lỗi, các coroutine khác vẫn tiếp tục chạy.
+
+```kotlin
+val scope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
+
+scope.launch {
+    throw RuntimeException("This will not cancel other coroutines")
+}
+
+scope.launch {
+    delay(1000)
+    println("This still runs")
+}
+```
+
+### chạy nhiều tác vụ
+
+async
+
+```kotlin
+suspend fun loadData() {
+    coroutineScope {
+        val apiCall = async { fetchFromNetwork() }
+        val dbCall = async { fetchFromDatabase() }
+        println("Result: ${apiCall.await()} + ${dbCall.await()}")
+    }
+}
+```
+
+### Dùng Coroutines thay vì RxJava
+
+- Coroutines: được Android Studio hỗ trợ
+- Cú pháp đơn giản
+- Ít tốn tài nguyên hệ thống
+- Hiệu suất tốt hơn
 
 ## MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào
 
