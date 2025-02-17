@@ -12,9 +12,16 @@
   - [Generic](#generic)
   - [Singletone](#singletone)
   - [Singleton dùng để làm gì](#singleton-dùng-để-làm-gì)
-  - [Khi nào 1 object sẵn sàng for Garbage collection hốt](#khi-nào-1-object-sẵn-sàng-for-garbage-collection-hốt)
   - [Garbage collection hoạt động ntn](#garbage-collection-hoạt-động-ntn)
+  - [Khi nào 1 object sẵn sàng for Garbage collection hốt](#khi-nào-1-object-sẵn-sàng-for-garbage-collection-hốt)
   - [Rx](#rx)
+    - [Operator trong RxJava](#operator-trong-rxjava)
+    - [CompositeDisposable](#compositedisposable)
+    - [Map và FatMap](#map-và-fatmap)
+    - [debounce, throttleFirst, throttleLatest](#debounce-throttlefirst-throttlelatest)
+    - [Backpressure là gì](#backpressure-là-gì)
+    - [- Observable, Flowable, Single, Maybe, và Completable](#--observable-flowable-single-maybe-và-completable)
+    - [Các loại Schedulers](#các-loại-schedulers)
   - [MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào](#mvvm-mvp-mvc-mvi-là-gì-khi-nào-dùng-cái-nào)
     - [MVC (Model View Control)](#mvc-model-view-control)
     - [MVP (Model View Presenter)](#mvp-model-view-presenter)
@@ -136,17 +143,11 @@ Thường viết Extention, hoặc viết base class
 Khởi tạo duy nhất 1 class
 Nếu dùng thì gọi lại khởi tạo đó
 
----
-
 ## Singleton dùng để làm gì
 
 - Một class chỉ có duy nhất một instance (khởi tạo)
 - Cung cấp toàn cầu để truy cập tới instance đó
 - Dùng khi ứng dụng chỉ cần duy 1 instance để quản lý (vd: Trình nghe nhạc, chỉ cần 1 Singleton Music) 
-
-## Khi nào 1 object sẵn sàng for Garbage collection hốt
-
-- Object không còn được sử dụng, hay tham chiếu
 
 ## Garbage collection hoạt động ntn
 
@@ -154,16 +155,72 @@ Khi object không sử dụng => Garbage Collector đánh dấu
 
 Khi có Garbage Collector, chúng ta có thể cấp phát bộ nhớ cho một đối tượng sau đó sử dụng nó và khi không còn bất kì một tham chiếu nào tới đối tượng đó, đối tượng sẽ được đánh dấu để Garbage Collector giải phóng các bộ nhớ đã được phân bổ. Và Garbage collector cũng đảm bảo rằng mọi đối tượng có tham chiếu trực tiếp sẽ không bị xóa khỏi bộ nhớ.
 
+## Khi nào 1 object sẵn sàng for Garbage collection hốt
+
+- Object không còn được sử dụng, hay tham chiếu
+
 ## Rx
 
-- <http://reactivex.io/documentation/operators.html#creating>
-- just: subscribe item
-- from: subscribe từng item trong list
-- defer: subscribe item cuối cùng (???)
-- interval: subscribe item sau mỗi khoảng thời gian
+- Xử lý bất đồng bộ gọn gàng hơn so với AsyncTask hoặc Handler.
+- Hỗ trợ chaining (kết hợp nhiều tác vụ bất đồng bộ một cách dễ dàng).
+- Hỗ trợ quản lý luồng dữ liệu với các Schedulers giúp xử lý đa luồng hiệu quả.
+- Giảm callback hell khi sử dụng LiveData hoặc Callbacks.
+
+### Operator trong RxJava
+
+là các phương thức giúp biến đổi, kết hợp, lọc dữ liệu. Một số operator quan trọng:
+
+- Transformation: map(), flatMap(), switchMap(), concatMap().
+- Filtering: filter(), debounce(), distinct(), take(), skip().
+- Combining: merge(), concat(), zip(), combineLatest().
+- Error handling: onErrorReturn(), onErrorResumeNext(), retry().
+
+### CompositeDisposable
+
+giúp quản lý nhiều Disposable để tránh memory leaks.
+
+### Map và FatMap
 
 - map: Trả về phần tử độc lập
 - fatMap: Trả về các phần tử đồng thời
+
+### debounce, throttleFirst, throttleLatest
+
+- debounce()	Chỉ nhận giá trị cuối cùng sau một khoảng thời gian không có dữ liệu mới. Ứng dụng: Text tìm kiếm
+- throttleFirst()	Chỉ lấy giá trị đầu tiên trong mỗi khoảng thời gian cố định. Xử lý khi bấm button (tránh double click).
+- throttleLatest()	Lấy giá trị mới nhất trong khoảng thời gian cố định.
+
+### Backpressure là gì
+
+- Backpressure xảy ra khi Observable phát ra dữ liệu quá nhanh so với khả năng xử lý của Observer, dẫn đến OutOfMemoryException.
+- Cách giải quyết:
+  - Dùng Flowable thay vì Observable.
+  - Sử dụng các Backpressure Strategies như BUFFER, DROP, LATEST.
+
+```kotlin
+Flowable.create({ emitter ->
+    for (i in 1..1000000) {
+        emitter.onNext(i) // Phát ra dữ liệu rất nhanh
+    }
+}, BackpressureStrategy.DROP)  // Bỏ bớt dữ liệu nếu Observer không kịp xử lý
+.subscribe { println(it) }
+```
+
+### - Observable, Flowable, Single, Maybe, và Completable
+
+- Observable:	Phát ra nhiều giá trị hoặc không có gì.
+- Flowable:	Giống - Observable, hỗ trợ Backpressure.
+- Single:	Chỉ phát ra một giá trị duy nhất, hoặc lỗi.
+- May: thể phát ra một giá trị, hoặc không có gì.
+- Completable:	Chỉ thực hiện một hành động, mà không phát ra giá trị nào.
+
+### Các loại Schedulers
+
+- Schedulers.io() → Xử lý tác vụ I/O (API call, đọc/ghi database, đọc file).
+- AndroidSchedulers.mainThread() → Chạy trên UI thread, dùng để cập nhật giao diện.
+- Schedulers.single() → Chạy trên một thread duy nhất (tốt cho các tác vụ tuần tự).
+- Schedulers.newThread() → Luôn tạo một thread mới cho mỗi tác vụ.
+- Schedulers.computation() → Xử lý tác vụ tính toán (tính toán phức tạp, xử lý ảnh).
 
 ## MVVM, MVP, MVC, MVI là gì, khi nào dùng cái nào
 
