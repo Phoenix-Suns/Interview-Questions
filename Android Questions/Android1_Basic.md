@@ -1,4 +1,4 @@
-# Câu hỏi Android Cơ bản 1
+# Câu hỏi Android Cơ bản
 
 - [Câu hỏi Android Cơ bản](#câu-hỏi-android-cơ-bản)
   - [4 Component chính trong Android là gì](#4-component-chính-trong-android-là-gì)
