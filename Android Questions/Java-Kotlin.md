@@ -45,22 +45,25 @@
 
 ## Liệt kê, giải thích 4 tính chất OOP
 
-- Tính đóng gói (encapsulation)
+- 🎁Tính đóng gói (encapsulation)
   - Cho phép chỉnh sửa phạm vi truy cập của biến, phương thức
   - Cho phép gom các lớp thành Pakage
+  - 👉Lợi ích: Ngăn thay đổi trực tiếp từ bên ngoài, giúp dễ bảo trì hơn.
 
-- Tính kế thừa (Inheritance)
+- 👪Tính kế thừa (Inheritance)
   - Cho phép xây dựng 1 lớp mới, dựa trên lớp đã có.
-  - Cho phép lớp con kế thừa các thành phần của Cha
+  - Cho phép lớp con kế thừa các thành phần của Cha.
+  - 👉Lợi ích: Giúp tái sử dụng code, giảm sự trùng lặp.
   
-- Tính đa hình (polymorphism)
+- 😋😋Tính đa hình (polymorphism)
   - Đối tượng có thể thay đổi kiểu (biến hình)
-  - Lớp con có thể Ghi Đè lại phương thức lớp cha
+  - Lớp con có thể Ghi Đè lại phương thức lớp cha.
+  - 👉Lợi ích: Linh hoạt, dễ mở rộng tính năng. Viết code tổng quát hơn
 
-- Tính trừu tượng (abstraction)
-  - Cho phép loại bỏ tính chất phức tạp của đối tượng, 
+- 🗿Tính trừu tượng (abstraction)
   - bằng cách chỉ đưa ra các thuộc tính và phương thức cần thiết của đối tượng,
   - ẩn đi cách thức mà nó thực hiện.
+  - 👉Lợi ích: Loại bỏ tính chất phức tạp của đối tượng. Giúp tập trung vào hành vi (behavior) thay vì cách nó được thực hiện.
 
 ## S.O.L.I.D
 
@@ -70,23 +73,22 @@ L — Liskov Substitution Principle
 I — Interface Segregation Principle
 D — Dependency Inversion Principle
 
-S — Single Responsibility Principle (nhiệm vụ)
-class/module chỉ thực hiện một chức năng. Model, network, calculate...
+S — 🎯Single Responsibility Principle (nhiệm vụ)
+class chỉ thực hiện một nhiệm vụ, chức năng. Model, network, calculate...
 
-O — Open Closed Principle (thích nghi)
-code để có thể thích nghi với các yêu cầu mới mà không thay đổi code cũ. Dùng interace để thiết kế.
+O — 🚪Open/Closed Principle (thích nghi)
+Class nên mở rộng được mà không cần sửa đổi code cũ. 
+Dùng interace để thiết kế.
 
-L — Liskov Substitution (thay thế) Principle
-class con phải thay thế được class cha.
+L — 👨‍👦Liskov Substitution Principle (thay thế)
+Class con phải thay thế được class cha.
 Nếu lớp cha không giải quyết được lớp con, thì tạo lớp cha lớn hơn, để cả 2 cùng kế thừa.
 
-I — Interface Segregation (phân biệt) Principle
-nhiều interface thực hiện sẽ tốt hơn là ít interface chứa nhiều function. Ko phải implement ko cần thiết
+I — 🚧Interface Segregation Principle (phân tách interface)
+Tách nhiều interface thực hiện, sẽ tốt hơn là 1 interface chứa nhiều function. Ko phải implement ko cần thiết
 
-D — Dependency Inversion Principle (phụ thuộc)
+D — 🚫🛐Dependency Inversion Principle (đảo ngược phụ thuộc)
 Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong Module
-
-
 
 ## Khi nào dùng Interface hoặc Abstract Class
 
