@@ -46,18 +46,18 @@
 ## Liệt kê, giải thích 4 tính chất OOP
 
 - 🎁Tính đóng gói (encapsulation)
-  - Cho phép chỉnh sửa phạm vi truy cập của biến, phương thức
   - Cho phép gom các lớp thành Pakage
+  - Cho phép chỉnh sửa phạm vi truy cập của biến, phương thức
   - 👉Lợi ích: Ngăn thay đổi trực tiếp từ bên ngoài, giúp dễ bảo trì hơn.
 
 - 👪Tính kế thừa (Inheritance)
-  - Cho phép xây dựng 1 lớp mới, dựa trên lớp đã có.
   - Cho phép lớp con kế thừa các thành phần của Cha.
+  - Cho phép xây dựng 1 lớp mới, dựa trên lớp đã có.
   - 👉Lợi ích: Giúp tái sử dụng code, giảm sự trùng lặp.
   
 - 😋😋Tính đa hình (polymorphism)
-  - Đối tượng có thể thay đổi kiểu (biến hình)
   - Lớp con có thể Ghi Đè lại phương thức lớp cha.
+  - Đối tượng có thể thay đổi kiểu (biến hình)
   - 👉Lợi ích: Linh hoạt, dễ mở rộng tính năng. Viết code tổng quát hơn
 
 - 🗿Tính trừu tượng (abstraction)
