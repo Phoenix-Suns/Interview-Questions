@@ -85,7 +85,7 @@ Class con phải thay thế được class cha.
 Nếu lớp cha không giải quyết được lớp con, thì tạo lớp cha lớn hơn, để cả 2 cùng kế thừa.
 
 I — 🚧Interface Segregation Principle (phân tách interface)
-Tách nhiều interface thực hiện, sẽ tốt hơn là 1 interface chứa nhiều function. Ko phải implement ko cần thiết
+Tách nhiều interface thực hiện, sẽ tốt hơn là 1 interface chứa nhiều function. Lớp ko phải implement ko cần thiết
 
 D — 🚫🛐Dependency Inversion Principle (đảo ngược phụ thuộc)
 Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong Module
