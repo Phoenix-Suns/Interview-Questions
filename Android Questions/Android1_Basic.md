@@ -99,31 +99,13 @@ OnPause - OnStop - onDestroy
 - OnStop: Activity ẩn hoàn toàn với user. không thấy nó nữa.
 - OnDestroy: Activity bị giết bởi User hay Hệ thống.
 
-- **English:**
-
-- OnCreate: Call on Activity first create. Screen Rotate.
-- OnStart: Activity become visible to user.
-- OnResume:  After hidden, Visible Again to user.
-
-- OnPause: Activity hidden, below other Activity, but we can see it.
-- OnStop: Activity invisible to user. we can not see it.
-- OnDestroy: Activity had be kill by User, or System.
-
 ### So sánh onCreate() và onStart()?
 
-OnCreate: gọi khi Activity khởi tạo lần đầu, 
-OnStart: gọi khi Activity hiển thị với người dùng.
-
-Khi User quay lại Activity, gọi OnRestart > OnResume. 
+OnCreate: gọi khi Activity khởi tạo lần đầu, .
+OnStart: gọi khi Activity hiển thị với người dùng..
+.
+Khi User quay lại Activity, gọi OnRestart > OnResume. .
 Sau khi ứng dụng bị thu hồi bộ nhớ, gọi OnCreate lại.
-
-**English**
-
-OnCreate: call on Activity first create, 
-OnStart: Activity become visible to user.
-
-When user comeback Activity, call OnRestart then OnResume. 
-If app had been gabage memory, call OnCreate again.
 
 ### Cách gởi Data từ Activity B > A
 
@@ -169,8 +151,8 @@ onPause -> onStop -> onDestroy
 
 ### Khi 1 Activity đang chạy mà bị crash, activity đó đi vào trạng thái nào
 
-onStop or onDestroy.
-Tùy vị trí Crash Activity hay Application.
+Crash ở Activity thì onDestroy.
+Crash ở Application thì onStop.
 
 ### Khi đang ở trong Activity, xoay màn hình thì Activity đi vào những trạng thái nào
 
@@ -190,39 +172,44 @@ Vẫn chạy
 
 ### lúc nào onDestroy() được gọi mà không có onPause() và onStop()?
 
-Khi finish() được gọi ở trong phương thức onCreate()
+Khi finish() được gọi ở trong onCreate()
 
 ### tại sao chỉ nên gọi setContentView() trong onCreate()
 
-onCreate chỉ gọi một lần
-onResume onStart: gọi nhiều lần, tốn tài nguyên
+onCreate: chỉ gọi một lần
+onResume, onStart: gọi nhiều lần, tốn tài nguyên.
 
 ## Fragment
 
-là UI Độc lập
-hiển thị 1 phần trong Activity
-có thể sử dụng nhiều lần.
-có thể dùng như 1 màn hình riêng biệt
+Fragment là một phần giao diện người dùng.
+Hiển thị 1 phần trong Activity.
+Có thể tái sử dụng nhiều lần hay 1 màn hình riêng biệt.
+Có layout hành vi và vòng đời riêng.
 VD: nội dung của tab, a Dialog, a list, a ui of slider...
 
-Fragment là một phần giao diện người dùng hoặc hành vi của một ứng dụng. Fragment có thể được đặt trong Activity, nó có thể cho phép thiết kế activity với nhiều mô-đun. Có thể nói Fragment là một loại sub-Activity. Fragment cũng có layout của riêng của nó, cũng có các hành vi và vòng đời riêng.
-
 ### Trình bày LifeCycle của Fragment
+
+onAttach. onCreate. onCreateView. onViewCreated.
+onStart.
+onResume.
+
+onPause.
+onStop.
+onDestroyView. onDestroy. onDetach.
 
 ![fragment lifecycle](images/fragment_lifecycle.png)
 
 ### phân biệt activity và fragment
 
-Fragment là một phần giao diện người dùng hoặc hành vi của một ứng dụng. 
-Fragment có thể được đặt trong Activity, nó có thể cho phép thiết kế activity với nhiều mô-đun. Tái sử dụng trong nhiều Activity.
-Có thể nói Fragment là một loại sub-Activity. 
-Fragment cũng có layout của riêng của nó, cũng có các hành vi và vòng đời riêng.
+🔹 Dùng Activity khi:
+✅ Màn hình hoạt động độc lập.
+✅ Cần xử lý riêng biệt, không phụ thuộc vào giao diện khác.
+✅ Ít có sự thay đổi giữa các giao diện.
 
-### Khi nào thì dùng Fragment, cho ví dụ trong thực tế. (Khi nào dùng Fragment thay cho Activity?)
-
-Hiển thị 1 phần trong Activity, có thể sử dụng nhiều lần.
-Hiển thị 1 màn hình trong Single Activity.
-Ví dụ: nội dung của tab, a Dialog, a list, a ui of slider...
+🔹 Dùng Fragment khi:
+✅ Muốn tái sử dụng UI trong nhiều màn hình.
+✅ Cần hiển thị nhiều thành phần UI trong một Activity.
+✅ Giao diện có thể thay đổi động (như máy tính bảng, màn hình lớn).
 
 ### Nếu thêm nhiều Fragment vào cùng 1 FrameLayout bằng FragmentManager thì thực tế hiển thị fragment nào, các fragment kia rơi vào trạng thái gì
 
@@ -230,6 +217,9 @@ Ví dụ: nội dung của tab, a Dialog, a list, a ui of slider...
 - Không rơi vào trạng thái nào. Trạng thái cuối là onResume
 
 ### Giải thích Back stack fragment manager
+
+Quản lý việc điều hướng giữa các Fragment trong ứng dụng Android.
+Khi một Fragment được thêm vào Back Stack, nó sẽ được lưu lại để có thể quay lại (Back) sau này.
 
 ```java
 // Thêm Fragment vào View(fragment_container)
@@ -257,22 +247,19 @@ View con có mối quan hệ, ràng buộc với nhau và Parent View.
 Tương tự như RelativeLayout, nhưng linh hoạt hơn.
 Dễ sử dụng với Layout Editor của Android Studio.
 
-**English**
+### Fragment dialog
 
-It is a Container View, 
-All Child View have a relationship, constrain together and parent layout.
-Similar to RelativeLayout, but more flexible.
-Easy to use with Android Studio's Layout Editor.
-
-### Dialog vs Fragment dialog
-
-- Hiện Fragment theo dạng Dialog, dialog phức tạp, tái sử dụng, khuyến khích dùng
+Hiện Fragment theo dạng Dialog, dialog phức tạp, tái sử dụng, khuyến khích dùng
 
 ### Khác nhau include và merge
 
-- merge: áp dụng lớp Container chứa Include
-- <LinearLayout><include></Linearlayout>
-- <merge>123...</merge> => <LinearLayout>123...</Linearlayout>
+Include hiển thị layout có Merge làm container
+
+```xml
+<LinearLayout><include></Linearlayout>
+
+<merge>123...</merge> => <LinearLayout>123...</Linearlayout>
+```
 
 ### làm sao biết view nào tiêu tốn nhiều tài nguyên ( dùng cái gì)
 
@@ -281,16 +268,15 @@ Easy to use with Android Studio's Layout Editor.
 ### So sánh LinearLayout và ConstrainLayout
 
 - LinearLayout: các View con sắp theo 1 chiều (dọc, ngang).
-- ConstrainLayout: các View con sắp xếp có liên kết với nhau.
+- ConstrainLayout: các View con sắp xếp có liên kết với nhau và view cha.
 
 ### Sự khác nhau giữ View.GONE và View.INVISIBLE
 
 - Gone: View biến mất, không giữ kích thước.
 - Invisible: View biến mất, vẫn giữ kích thước.
 
-### Giải thích dp, dpi, pt, sp trong Android
+### Giải thích pt, dp, sp trong Android
 
-- dpi: (Dot per inch) là số lượng điểm ảnh hiển thị trên mỗi inch màn hình
 - Pt:  1/72 inch kích thước màn hình.
 - dp: density independent pixel. Phụ thuộc mật độ điểm ảnh.
 - Sp: scale independent pixel. Co theo mật độ điểm ảnh.
@@ -307,13 +293,18 @@ public static float convertPixelsToDp(float px, Context context){
 }
 ```
 
-### RecyclerView
+### RecyclerView là gì
+
+- Là một ViewGroup nâng cao.
+- Để hiển thị danh sách hoặc lưới dữ liệu một cách hiệu quả trong Android.
+- Nó là phiên bản cải tiến của ListView và GridView.
+- Hiệu suất cao bằng cách tái sử dụng View và tối ưu bộ nhớ.
 
 #### Viewholder là gì
 
-Thiết kế cho Custom Adapter.
-Mô tả Item View và Dữ liệu trong RecyclerView.
-Giúp không cần dùng findViewId như trong ListView
+Là một lớp trong RecyclerView.
+Mô tả Item View và Dữ liệu trong RecyclerView..
+Tối ưu hóa hiệu suất bằng cách tái sử dụng View, tránh việc gọi findViewById() nhiều lần, giúp cuộn danh sách mượt mà hơn.
 
 #### làm recycler view giống view pager
 
@@ -327,7 +318,13 @@ onBindViewHolder payloads
 
 DiffUtil
 
-## Service
+## Service là gì
+
+Service trong Android là một thành phần chạy ngầm, không có giao diện, dùng để thực hiện các tác vụ chạy lâu dài như:
+✅ Phát nhạc trong nền 🎵
+✅ Đồng bộ dữ liệu với server 🔄
+✅ Theo dõi vị trí GPS 📍
+✅ Xử lý tác vụ khi ứng dụng bị đóng
 
 ### Phân biệt Service và IntentService
 
@@ -344,8 +341,6 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 - Service: Là 1 Android Component, có thể Chạy Ngầm, ngay cả khi người dùng không tương tác. Chạy trong Main Thread.
 - AsyncTask: Chạy trong Background Thread, chỉ chạy trong khi người dùng còn tương tác ứng dụng.
 
-- https://developer.android.com/guide/components/services
-
 ### Service Android 8.0
 
 - Background Service: Chạy độc lập, không cần giao diện. Giới hạn tác vụ chạy nền, chỉ chạy vài phút 
@@ -354,14 +349,13 @@ IntentService: Tự dừng lại sau khi trả về kết quả, hay hàm **“o
 ### Foreground và Background Service là gì, Bound service là gì
 
 - Foreground Service: thực hiện hoạt động mà người dùng chú ý. (vd: nghe nhạc)
-- Background Service: thực hiện hoạt động chạy ngầm. không cần báo người dùng.
+- Background Service: thực hiện hoạt động chạy ngầm. không cần báo người dùng. Cần có notification
 - Bound Service: Component ràng buộc Service để lấy kết quả liên tục (như Client-Server)
 
 ### có mấy cách để start service
 
-- Dùng StartService 
-  - bằng class name
-  - bằng text, dùng tên package + service
+- bằng class name
+- bằng text, dùng tên package + service
 
 ### ThreadPool (thuộc java)
 
@@ -376,15 +370,15 @@ Quản lý, điều tiết nhiều Thread
 
 ## Giải thích về 4 launchmode: standard, singleTop, singleTask, singleInstance
 
-- Standard: nhiều Activity tồn tại (khởi tạo nhiều lần)
-- SingleTop: nhiều Activity tồn tại (khởi tạo nhiều lần). Nếu Activity đã khởi tạo ở trên cùng, chỉ gọi hàm onNewIntent. Nếu không trên cùng thì khởi tạo lại.
-- SingleTask: Chỉ 1 Activity tồn tại. Nếu Activity đã khởi tạo, destroy các Activity sau nó.
+- Standard: nhiều Activity tồn tại (khởi tạo nhiều lần).
+- SingleTop: nhiều Activity tồn tại (khởi tạo nhiều lần). Nếu Activity đã khởi tạo ở trên cùng, chỉ gọi hàm onNewIntent. Nếu không trên cùng thì khởi tạo lại..
+- SingleTask: Chỉ 1 Activity tồn tại. Nếu Activity đã khởi tạo, destroy các Activity sau nó..
 - singleInstance: Chỉ 1 Activity tồn tại, Activity chạy Task khác. Nếu Activity đã khởi tạo, sẽ nhảy lên trên.
 
 ## Phân biệt Serializable và Parcelable, cái nào tốt hơn
 
-- Serializable: Chuyển Object(data) thành 1 dạng lưu trữ (text để lưu trữ và phục hồi)
-- Parcelable: Gởi Object(data) thông qua các Bunble trong Android
+- Serializable: một interface trong Java. Biến đổi một object thành byte stream để có thể lưu trữ hoặc truyền đi.
+- Parcelable: một interface của Android. Giúp biến đổi object thành Parcel để truyền giữa các thành phần của hệ thống. Nhanh hơn.
 
 ## ANR là gì, khi nào nó xảy ra: Application not responding
 
@@ -412,25 +406,21 @@ Quản lý, điều tiết nhiều Thread
 
 - Gradle là một hệ thống tự động build mã nguồn mở
 
-## Dependency injection là gì
-
-- Là phương pháp giảm sự phụ thuộc 1 module trong 1 module
-- Thay vì khởi tạo 1 object trong 1 object, ta khởi tạo nó bên ngoài. Rồi tim vào bên trong qua: constructer, setter, interface...
-
 ## Làm thế nào để upload 1 file ảnh trong máy Android lên server
 
 - Tạo 1 Restfull Api upload ảnh
 - Upload ảnh bằng thư viện Retrofit
 
-## Application
+## Application là gì
 
 - Application là lớp cơ sở trg Android App.
 - Chứa tất cả Component khác (activity, service...)
 - Khởi tạo đầu tiên, khi ứng dụng được chạy.
 
-## Context
+## Context là gì
 
-- Context: Cung cấp thông tin, quyền truy cập thông tin, trạng thái ứng dụng.
+- Context: là 1 thành phần trong android. Cung cấp thông tin môi trường ứng dụng, truy cập tài nguyên, khởi chạy Activity, Service
+
 - ApplicationContext: ngữ cảnh của Toàn ứng dụng
 - BaseContext: lấy ngữ cảnh có thể sử dụng
 - getContext trong View: lấy ngữ cảnh tạo View
@@ -442,56 +432,57 @@ Không dùng: JVM (Java Virtual Machine)
 
 ## Memory leak xảy ra khi nào?
 
-Since the AsyncTask maintains a reference to the previous instance of the Activity, that Activity won’t be garbage collected, resulting in a memory leak.
+xảy ra khi bộ nhớ đã cấp phát không được giải phóng, khiến ứng dụng tiêu tốn RAM ngày càng nhiều và có thể bị OutOfMemoryError (OOM).
 
 ### Phòng tránh memory leak
 
-Không giữ reference của view bên trong AsyncTask
-Không giữ reference của View ở đối tượng static
-Tránh đưa các Views vào trong Collection, bạn có thể sử dụng WeakHashMap
-Dùng Leak-Canary để hiển thị biến leak
+✅ Dùng Application Context thay vì Activity Context nếu không cần UI.
+✅ Hủy Listener, BroadcastReceiver, Callback trong onDestroy().
+✅ Dùng WeakReference hoặc ViewModel để giữ dữ liệu thay vì giữ Activity.
+✅ Không giữ tham chiếu đến View trong Background Thread.
+✅ Sử dụng LeakCanary để phát hiện Memory Leak nhanh chóng.
 
-## Unit test
+# Unit test là gì
 
-unit test: kiểm thử method test.
+Giúp kiểm tra logic code một cách độc lập, giảm lỗi khi phát triển ứng dụng.
 
-### How to write code for easier unit testing
+## Cách viết code dễ cho unit test
 
-using Dependency injection.
-create a method for every fuction.
-divice module for every mission. like: model, view, controller, data, helper.
+✅ Dùng Dependency Injection (DI) để tránh khởi tạo cứng trong class.
+✅ Dùng Interface và Mock Object để kiểm thử dễ dàng hơn.
+✅ Tránh dùng Singleton và Static trong class.
+✅ Không gọi API hoặc Database trực tiếp trong Unit Test.
+✅ Dùng LiveData / Flow trong ViewModel để kiểm thử dễ hơn.
+✅ Dùng Mockito hoặc Fake Repository để kiểm thử độc lập.
 
 ## 1 màn hình có 4 button để upload hình, và 1 nút Save
 
 - Khi click 4 button thì chọn hình và upload, 4 hình upload chạy song song, khi nhấn nút Save thì làm sao để đợi 4 hình upload xong thì mới gọi API của nút Save
 
-First Way:
-We can use a flag variable to count Finish upload.
-when every upload finish, we will check it.
+Cách 1:.
+Chúng ta có thể sử dụng biến cờ để đếm Finish upload..
+khi mỗi lần upload hoàn tất, chúng ta sẽ kiểm tra nó..
+.
+Cách 2:.
+chúng ta có thể sử dụng AsyncTask để Kiểm tra. chúng ta chạy upload trênDoinBackground, sau đó kiểm tra nó trênPostExcute.
+.
+Cách 3:.
+Sử dụng thư viện thứ ba như RxAndroid. .
+Đưa mỗi phương thức Upload vào Observable
+Dùng phương thức Zip để kiểm tra
+.
+Cách 4:
+Sử dụng Coroutine
+Đưa mỗi phương thức upload vào flow
+Dùng phương thức Zip để kiểm tra
 
-Second Way:
-we can use AsyncTask to Check. we run upload onDoinBackground, then check it onPostExcute
+## dependency injection là gì
 
-Third Way:
-We use third library like RxAndroid. 
-we put all Upload method into Observable Zip method. 
-then Check finish on Subscribe method
-
-## dependency injection - Tiêm phụ thuộc
-
-dependency: phụ thuộc.
-injected: tiêm, bơm.
-
-Làm giảm sự phụ thuộc của module này trong module kia
-Giảm khởi tạo Lớp trong lớp
-
-It is a method to reduce dependency module in side a other module.
-Dont create Module's Instance in side an other Module.
-We need provide module by other way, like: constructer, setter, interface...
-
-It will easier for unit test, upgrade, update, module.
-
-annotations thirth library, like: dagger, hilt
+Làm giảm sự phụ thuộc của module này trong module kia.
+Giảm khởi tạo Lớp trong lớp. Tránh leak memory.
+.
+Dùng : constructer, setter, interface....
+Hay thư viện: hilt, dagger, koin.
 
 ## Các bước vẽ trên GG Map
 
@@ -500,8 +491,6 @@ annotations thirth library, like: dagger, hilt
 - Cài Map Dependencies trong Gradle
 - Khởi tạo Map trên View, và kolin file
 - Khi Map Ready thì gọi hàm Vẽ
-
-- https://developers.google.com/maps/documentation/android-sdk/polygon-tutorial
 
 ## Các bước Push Notification Firebase
 
@@ -523,7 +512,9 @@ annotations thirth library, like: dagger, hilt
   - Nếu thành công thì gọi Consume sản phẩm
   - Nếu Pedding thì hiện thông báo, khi mở app Sẽ consume sản phẩm
 
-- https://viblo.asia/p/in-app-purchase-trong-android-phan-2-naQZRMwjKvx
+## 1 số thư viện dependency Injection
+
+Hilt, dagger, koin
 
 ## Các câu hỏi khác
 ### ...Là gì? dùng trong trường hợp nào

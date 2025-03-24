@@ -67,38 +67,44 @@
 
 ## S.O.L.I.D
 
-S — Single Responsibility Principle
-O — Open Closed Principle
-L — Liskov Substitution Principle
-I — Interface Segregation Principle
-D — Dependency Inversion Principle
+là 5 nguyên tắc thiết kế hướng đối tượng (OOP) giúp mã nguồn dễ hiểu, dễ bảo trì và mở rộng
 
-S — 🎯Single Responsibility Principle (nhiệm vụ)
-class chỉ thực hiện một nhiệm vụ, chức năng. Model, network, calculate...
-
-O — 🚪Open/Closed Principle (thích nghi)
-Class nên mở rộng được mà không cần sửa đổi code cũ. 
-Dùng interace để thiết kế.
-
-L — 👨‍👦Liskov Substitution Principle (thay thế)
-Class con phải thay thế được class cha.
-Nếu lớp cha không giải quyết được lớp con, thì tạo lớp cha lớn hơn, để cả 2 cùng kế thừa.
-
-I — 🚧Interface Segregation Principle (phân tách interface)
-Tách nhiều interface thực hiện, sẽ tốt hơn là 1 interface chứa nhiều function. Lớp ko phải implement ko cần thiết
-
-D — 🚫🛐Dependency Inversion Principle (đảo ngược phụ thuộc)
+S — Single Responsibility Principle.
+O — Open Closed Principle.
+L — Liskov Substitution Principle.
+I — Interface Segregation Principle.
+D — Dependency Inversion Principle.
+.
+S — 🎯Single Responsibility Principle (nhiệm vụ).
+class chỉ thực hiện một nhiệm vụ, chức năng. Model, network, calculate....
+.
+O — 🚪Open/Closed Principle (thích nghi).
+Class nên mở rộng được mà không cần sửa đổi code cũ. .
+Dùng interace để thiết kế..
+.
+L — 👨‍👦Liskov Substitution Principle (thay thế).
+Nếu Class con thay thế được class cha thì ứng dụng vẫn hoạt động đúng,
+.
+I — 🚧🚧Interface Segregation Principle (phân tách interface).
+Tách nhiều interface thực hiện, sẽ tốt hơn là 1 interface chứa nhiều function. Ko phải implement ko cần thiết.
+.
+D — 🚫🛐Dependency Inversion Principle (đảo ngược phụ thuộc).
 Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong Module
+
+## Dependency injection là gì
+
+- Là phương pháp giảm sự phụ thuộc 1 module trong 1 module.
+- Thay vì khởi tạo 1 object trong 1 object, ta khởi tạo nó bên ngoài. Rồi tim vào bên trong qua: constructer, setter, interface...
 
 ## Khi nào dùng Interface hoặc Abstract Class
 
-- Abstract class: là một class cha cho tất cả các class có cùng bản chất.
+- Abstract class: là một class cha cho tất cả các class có cùng bản chất..
 - Interface: là một chức năng mà bạn có thể thêm và bất kì class nào.
 
 ## Java dùng pass-by-value hay pass-by-reference
 
-- Pass-by-value: (trong != ngoài) thay đổi biến trong hàm => ngoài hàm sẽ không bị ảnh hưởng. Nó giống như bạn copy giá trị của biến vào biến khác rồi truyền vào hàm.
-- Pass-by-reference: (trong == ngoài) là khi bạn thay đổi biến trong hàm => ngoài hàm bị ảnh hưởng. Nó giống như bạn truyền đúng địa chỉ của biến đó vào hàm.
+- Pass-by-value: (trong != ngoài) thay đổi biến trong hàm, biến ngoài hàm sẽ không bị ảnh hưởng. Nó giống như bạn copy giá trị của biến vào biến khác rồi truyền vào hàm..
+- Pass-by-reference: (trong == ngoài) là khi bạn thay đổi biến trong hàm, biến ngoài hàm bị ảnh hưởng. Nó giống như bạn truyền đúng địa chỉ của biến đó vào hàm..
 
 ```java
 public static void changeStuff(int a, Test b, Test c, int[] d)
@@ -115,61 +121,97 @@ public static void changeStuff(int a, Test b, Test c, int[] d)
 là những luồng của java chạy song song với luồng của ứng dụng. (vd: Garbage collection)
 Tự hủy cùng với ứng dụng.
 
-- Immutable và mutable là gì
-- Tại sao Class String trong Java lại immutable
+## Immutable và mutable là gì
 
-- StringBuilder vs String
-- StringBuilder vs StringBuffer
+- Mutable var: biến thay đổi giá trị sau khi khởi tạo.
+- Immutable val: biến không thể thay đổi giá trị.
 
-## Sealed class, data class
+## String và StringBuilder vs StringBuffer
+
+- String là lớp cơ sở để xử lý chuỗi
+- StringBuilder, StringBuffer hiệu xuất cao hơn.
+
+## Giải thích về Sealed class, data class
 
 - Sealed class: là lớp trừu tượng (Abstract class - SubClass phải cùng file), mở rộng của Enum class (có thể sử dụng when)
-- Data Class: Lớp lưu trữ dữ liệu, khi khởi tạo phải có Properties. giữ Tham trị (giữ giá trị - Pass by value). Class giữ tham chiếu (pass by reference)
+- Data Class: Lớp lưu trữ dữ liệu, khi khởi tạo phải có Properties. giữ Tham trị (Pass by value). Class giữ tham chiếu (pass by reference)
 
-## let, also, apply, with
+## let, run, with, apply, also
 
-- with: để gọi nhiều phương thức(method) cùng 1 đối tượng.
-- let: để check null
-  - là một hàm phạm vi (scoping function):
-  - Sử dụng một biến trong một phạm vi cụ thể trong đoạn code.
-- apply: để Trả về Object (giống return function)
-  - extension function cho tất cả các loại Object.
-- also: để trả về Object gọi nó (return this)
-- run: kết hợp with & let
+Là các hàm phạm vi (Scope Function).
+giúp viết code gọn gàng hơn bằng cách giới hạn phạm vi (scope) của một object trong một khối (block).
+
+- Let: biến đổi object, hoặc kiểm tra null. trả về object mới. It
+- apply: để đặt properties khi khởi tạo object. Trả về object mới. This
+- run: thực hiện nhiều thao tác liên quan object. trả về object mới. This
+- with: thực hiện nhiều thao tác liên quan object. Trả về object cũ. This
+- also: dùng khi muốn làm gì object, như logging, debug. Trả về object cũ. It
+
+```kotlin
+/// let
+val number = "123"
+val result = number.let { it.toInt() * 2 }
+println(result) // 246
+
+/// run
+val message = "Hello Kotlin".run {
+  println(length) // In ra 13
+  uppercase() // Trả về "HELLO KOTLIN"
+}
+println(message) // HELLO KOTLIN
+
+/// with
+val person = Person("John", 25)
+with(person) {
+  println(name) // John
+  println(age) // 25
+}
+
+/// Apply
+val person = Person().apply {
+  name = "Alice"
+  age = 30
+}
+println(person.name) // Alice
+
+/// also
+val numbers = mutableListOf(1, 2, 3).also {
+  println("Danh sách ban đầu: $it")
+}
+```
 
 ## val, var, const, const val, lazy, lateinit
 
-- var: khai báo biến.
-- val: Khai báo biến tĩnh. (Khởi tạo lúc chạy)
-- const val: Khai báo biến tĩnh. (khởi tạo lúc biên dịch)
-- lateinit: biến khởi tạo sau. (dùng cho var)
-- lazy: biến khởi tạo sau. (dùng cho val). được cấp lần đầu sử dụng (lazy by {}, giống get nhưng chỉ lấy lần đầu sử dụng)
+- var: khai báo biến..
+- val: Khai báo biến tĩnh. (Khởi tạo lúc chạy).
+- const val: Khai báo biến tĩnh. (khởi tạo lúc biên dịch).
+- lateinit var: biến khởi tạo sau.
+- lazy val: biến khởi tạo sau. được cấp lần đầu sử dụng (lazy by {}, giống get nhưng chỉ lấy lần đầu sử dụng)
 
 ## Generic
 
-Sử dụng một class hoặc một implement theo cách chung chung
-Thường viết Extention, hoặc viết base class
+Là tính năng giúp tái sử dụng code với nhiều kiểu dữ liệu khác nhau
 
 ## Singletone
 
-Khởi tạo duy nhất 1 class
-Nếu dùng thì gọi lại khởi tạo đó
+Khởi tạo duy nhất 1 object trong ứng dụng.
+Nếu dùng thì gọi lại object đó
 
 ## Singleton dùng để làm gì
 
-- Một class chỉ có duy nhất một instance (khởi tạo)
-- Cung cấp toàn cầu để truy cập tới instance đó
-- Dùng khi ứng dụng chỉ cần duy 1 instance để quản lý (vd: Trình nghe nhạc, chỉ cần 1 Singleton Music) 
+- Một class chỉ có duy nhất một khởi tạo (instance).
+- Dùng khi ứng dụng chỉ cần duy 1 khởi tạo.
+- Để quản lý (vd: Trình nghe nhạc, chỉ cần 1 Singleton Music)
 
 ## Garbage collection hoạt động ntn
 
-Khi object không sử dụng => Garbage Collector đánh dấu
+Khi object không sử dụng, thì Garbage Collector đánh dấu.
 
-Khi có Garbage Collector, chúng ta có thể cấp phát bộ nhớ cho một đối tượng sau đó sử dụng nó và khi không còn bất kì một tham chiếu nào tới đối tượng đó, đối tượng sẽ được đánh dấu để Garbage Collector giải phóng các bộ nhớ đã được phân bổ. Và Garbage collector cũng đảm bảo rằng mọi đối tượng có tham chiếu trực tiếp sẽ không bị xóa khỏi bộ nhớ.
+khi không còn bất kì một tham chiếu nào tới đối tượng đó, Garbage Collector giải phóng các bộ nhớ đã được phân bổ.
 
 ## Khi nào 1 object sẵn sàng for Garbage collection hốt
 
-- Object không còn được sử dụng, hay tham chiếu
+Object không còn được sử dụng, và được tham chiếu
 
 ## Rx
 
@@ -246,15 +288,15 @@ suspend fun getUserData(): User {
 
 ## Coroutines
 
-- Coroutines giúp xử lý bất đồng bộ nhẹ hơn và dễ đọc hơn so với Thread
-- Không cần tạo một Thread mới cho mỗi tác vụ
+- Coroutines giúp xử lý bất đồng bộ nhẹ hơn và dễ đọc hơn so với Thread.
+- Không cần tạo một Thread mới cho mỗi tác vụ.
 - Structured Concurrency → Dễ quản lý vòng đời, tránh memory leak.
 
 ### Launch vs Async
 
-- launch - bất đồng bộ, Không có giá trị trả về
-- async - bất đồng bộ, Có giá trị trả về
-- runBlocking - đồng bộ, block thread chính
+- launch - bất đồng bộ, Không có giá trị trả về.
+- async - bất đồng bộ, Có giá trị trả về.
+- runBlocking - đồng bộ, block thread chính.
 
 ```kotlin
 // launch - Không có giá trị trả về
@@ -393,17 +435,18 @@ Controller control View + Model
 
 ### MVP (Model View Presenter)
 
-### MVVM (ModelView View Model)
+### MVVM (Model-View ViewModel)
 
-View: interactive with user, show infomation, gét user input.
-Model: handle with data, sqlite, file
-3 Layer.
-ViêwModel: connect View& ViewModel, handle demand from view.
+Là kiến trúc phần mềm giúp tổ chức code trong ứng dụng Android một cách gọn gàng, dễ bảo trì và dễ kiểm thử.
 
-View get Event from User
-Multiple View mapping 1 ModelView
-View contain relation properties to ViewModel
-belong support technology, Need a libary to use
+1️⃣ View (Activity/Fragment) gửi yêu cầu lấy dữ liệu.
+2️⃣ ViewModel xử lý yêu cầu, gọi Model (API, Database) để lấy dữ liệu.
+3️⃣ Model trả dữ liệu về ViewModel.
+4️⃣ ViewModel cập nhật dữ liệu lên View bằng LiveData hoặc StateFlow.
+5️⃣ View hiển thị dữ liệu lên UI.
+
+View → ViewModel → Model (Lấy dữ liệu)
+Model → ViewModel → View (Cập nhật UI)
 
 ### MVI: (Model View Intent)
 
@@ -456,7 +499,9 @@ Longger code
 
 ### Khi nào ViewModel Huỷ (onCleared)
 
-Activity hoặc Fragment Destroy
+Activity hoặc Fragment Destroy.
+App bị đóng.
+ViewModelStore.clear().
 
 ## Cách hoán đổi 2 số a và b mà ko cần tạo thêm biến thứ 3
 
@@ -500,7 +545,3 @@ for(int i = 0; i < 1000; i++) {
 end:
 stmt2
 ```
-
-## Liệt kê những trường hợp mà finally ko đc gọi
-
-- Finally: biến không thay đổi giá trị sau khi khởi tạo
