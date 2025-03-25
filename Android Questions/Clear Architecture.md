@@ -17,21 +17,27 @@
     - Data Source
     - Mapper (Network, Room to Model)
 
-![](clear_architecture_contain.png)
+![](images/clear_architecture_contain.png)
 
 ## Data Flow
 
-![](clear_architecture_data_flow.png)
+![](images/clear_architecture_data_flow.png)
 
-1. UI gọi phương thức từ Presenter/ViewModel.
-2. Presenter/ViewModel thực hiện Use case.
-3. Use case thu thập dữ liệu từ User và gởi Repositories.
-4. Each Repository trả về dữ liệu từ Data Source (Cached or Remote).
+UI (View) ↔ ViewModel ↔ UseCase ↔ Repository ↔ Data Source (API/DB)
+
+1. UI: Nhận dữ liệu từ ViewModel, hiển thị trên giao diện. gọi phương thức từ ViewModel.
+2. ViewModel: Xử lý sự kiện UI, gọi UseCase để lấy dữ liệu.
+3. UseCase: thu thập dữ liệu từ User và gởi Repositories.
+4. Repository: trả về dữ liệu từ Data Source (Local hay Remote).
 5. Data trả về UI để hiển thị
+
+🚀 Dữ liệu luân chuyển theo một hướng rõ ràng từ Data → Domain → Presentation.
+
+
 
 ## Dependency Rule
 
-![](clear_architecture_dependency.png)
+![](images/clear_architecture_dependency.png)
 
 ## Reference
 
