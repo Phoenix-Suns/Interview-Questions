@@ -69,6 +69,8 @@
 
 là 5 nguyên tắc thiết kế hướng đối tượng (OOP) giúp mã nguồn dễ hiểu, dễ bảo trì và mở rộng
 
+Single (Một việc), Open (Mở rộng/Đóng sửa), Liskov (Thay thế), Interface (Chia nhỏ), và Dependency (Phụ thuộc trừu tượng)
+
 S — Single Responsibility Principle.
 O — Open Closed Principle.
 L — Liskov Substitution Principle.
@@ -103,8 +105,9 @@ Hạn chế Phụ thuộc Module trong Module. Tránh khởi tạo Module trong 
 
 ## Java dùng pass-by-value hay pass-by-reference
 
-- Pass-by-value: (trong != ngoài) thay đổi biến trong hàm, biến ngoài hàm sẽ không bị ảnh hưởng. Nó giống như bạn copy giá trị của biến vào biến khác rồi truyền vào hàm..
-- Pass-by-reference: (trong == ngoài) là khi bạn thay đổi biến trong hàm, biến ngoài hàm bị ảnh hưởng. Nó giống như bạn truyền đúng địa chỉ của biến đó vào hàm..
+pass-by-value (truyền tham trị). 
+Khi truyền một đối tượng, Java sao chép giá trị của tham chiếu (địa chỉ bộ nhớ) và truyền bản sao đó vào phương thức. 
+Vì vậy, bạn có thể thay đổi dữ liệu bên trong đối tượng gốc, nhưng không thể làm cho biến tham chiếu gốc trỏ tới một đối tượng mới.
 
 ```java
 public static void changeStuff(int a, Test b, Test c, int[] d)
@@ -131,10 +134,34 @@ Tự hủy cùng với ứng dụng.
 - String là lớp cơ sở để xử lý chuỗi
 - StringBuilder, StringBuffer hiệu xuất cao hơn.
 
-## Giải thích về Sealed class, data class
+## Các lớp trong Kotlin, Sealed class, data class
 
-- Sealed class: là lớp trừu tượng (Abstract class - SubClass phải cùng file), mở rộng của Enum class (có thể sử dụng when)
-- Data Class: Lớp lưu trữ dữ liệu, khi khởi tạo phải có Properties. giữ Tham trị (Pass by value). Class giữ tham chiếu (pass by reference)
+- Sealed class: là lớp trừu tượng.
+mở rộng của Enum class (có thể sử dụng when).
+
+- Data Class: Lớp lưu trữ dữ liệu.
+khi khởi tạo phải có Properties.
+
+KOTLIN CLASSES
+│
+├── [ Lớp chứa dữ liệu ]
+│   └── ➔ DATA CLASS (có sẵn equals/copy. Dùng để Lưu trữ Model)
+│
+├── [ Lớp quản lý trạng thái ]
+│   ├── ➔ ENUM CLASS (Tập hợp hằng số cố định: RED, BLUE, GREEN)
+│   └── ➔ SEALED CLASS (Mở rộng của ENUM, Có thể thêm hàm: Success(data), Error(msg))
+│
+├── [ Lớp cấu trúc & Kế thừa ]
+│   ├── ➔ ABSTRACT CLASS (Lớp trừu tượng, làm nền tảng cho lớp con)
+│   ├── ➔ OPEN CLASS (Lớp cho phép kế thừa)
+│   └── ➔ INTERFACE (Định nghĩa hành vi/khả năng cho các lớp khác)
+│
+├── [ Lớp đặc biệt (Single Instance) ]
+│   └── ➔ OBJECT (Singleton - Duy nhất một đối tượng toàn ứng dụng. Dùng để tạo Singleton, Utility class)
+│
+└── [ Lớp lồng nhau ]
+    ├── ➔ NESTED CLASS (Lớp nằm trong lớp khác, không truy cập được lớp cha)
+    └── ➔ INNER CLASS (Có từ khóa 'inner', truy cập được mọi thứ của lớp cha)
 
 ## let, run, with, apply, also
 
@@ -146,6 +173,27 @@ giúp viết code gọn gàng hơn bằng cách giới hạn phạm vi (scope) c
 - run: thực hiện nhiều thao tác liên quan object. trả về object mới. This
 - with: thực hiện nhiều thao tác liên quan object. Trả về object cũ. This
 - also: dùng khi muốn làm gì object, như logging, debug. Trả về object cũ. It
+
++----------+------------+-------------------+------------------------------------------+
+
+|   HÀM    | THAM CHIẾU |     TRẢ VỀ        |           CÁCH DÙNG PHỔ BIẾN             |
++----------+------------+-------------------+------------------------------------------+
+
+|   let    |     it     | Kết quả Lambda    | Kiểm tra Null (?.let), biến đổi dữ liệu  |
++----------+------------+-------------------+------------------------------------------+
+
+|   run    |    this    | Kết quả Lambda    | Cấu hình đối tượng và tính toán kết quả  |
++----------+------------+-------------------+------------------------------------------+
+
+|   with   |    this    | Kết quả Lambda    | Nhóm nhiều hàm gọi trên một đối tượng    |
++----------+------------+-------------------+------------------------------------------+
+
+|   apply  |    this    | Object ban đầu    | Khởi tạo, cấu hình thuộc tính đối tượng  |
++----------+------------+-------------------+------------------------------------------+
+
+|   also   |     it     | Object ban đầu    | Các thao tác phụ (logging, debug...)     |
++----------+------------+-------------------+------------------------------------------+
+
 
 ```kotlin
 /// let
