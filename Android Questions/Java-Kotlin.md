@@ -593,3 +593,17 @@ for(int i = 0; i < 1000; i++) {
 end:
 stmt2
 ```
+
+## Deathlock là gì
+
+hai hoặc nhiều tiến trình, luồng (thread) bị mắc kẹt vĩnh viễn
+vì mỗi bên đang giữ một tài nguyên mà bên kia cần
+dẫn đến toàn bộ hệ thống hoặc ứng dụng bị treo, hoặc (ARN Application Not Responding)
+
+Cách phòng tránh:
+
+1. Đồng bộ thứ tự khóa (Bắt buộc)
+Nếu cần dùng nhiều khóa, mọi luồng đều phải lấy khóa theo một thứ tự duy nhất (Ví dụ: Luôn lấy Khóa A trước ➔ Khóa B sau). Không bao giờ làm ngược lại.
+
+2. Sử dụng khóa có giới hạn thời gian (Timeout)
+Thay vì chờ đợi vô thời hạn, hãy dùng tryLock(timeout). Nếu quá thời gian quy định mà không lấy được khóa, luồng sẽ tự động từ bỏ để tránh bị treo.
