@@ -134,7 +134,7 @@ Tự hủy cùng với ứng dụng.
 - String là lớp cơ sở để xử lý chuỗi
 - StringBuilder, StringBuffer hiệu xuất cao hơn.
 
-## Các lớp trong Kotlin, Sealed class, data class
+## Các lớp trong Kotlin
 
 - Sealed class: là lớp trừu tượng.
 mở rộng của Enum class (có thể sử dụng when).
@@ -163,7 +163,7 @@ KOTLIN CLASSES
     ├── ➔ NESTED CLASS (Lớp nằm trong lớp khác, không truy cập được lớp cha)
     └── ➔ INNER CLASS (Có từ khóa 'inner', truy cập được mọi thứ của lớp cha)
 
-## let, run, with, apply, also
+## các scope function trong kotlin
 
 Là các hàm phạm vi (Scope Function).
 giúp viết code gọn gàng hơn bằng cách giới hạn phạm vi (scope) của một object trong một khối (block).

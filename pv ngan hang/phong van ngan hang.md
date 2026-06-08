@@ -4,7 +4,7 @@
 * Dọn dẹp resource đúng lifecycle (`onDestroy`, `onDestroyView`) (unregister receiver, remove callback / listener, clear binding)
 * Dùng component lifecycle-aware như `ViewModel`, `lifecycleScope` để tự động huỷ task
 
-# xử lý tình trạng Memory Leak
+## xử lý tình trạng Memory Leak
 
 * Tránh leak từ `Handler`, `Thread`, `Listener`, (tránh giữ reference của android reference, dùng weak reference)
 * Sử dụng tool như **LeakCanary**, check profiler, để phát hiện memory leak
@@ -139,65 +139,6 @@ Các lỗi kinh điển như giữ reference của Context/View trong một Thre
 Khi người dùng bấm nút Home để ẩn app xuống Background, làm sao để màn hình biến thành một màu trắng hoặc logo Bank để tránh bị chụp trộm màn hình (chụp snapshot hệ thống)? (Trả lời: Dùng LayoutParam.FLAG_SECURE trong Activity).
 
 
-# Nhóm câu hỏi Tình huống (Behavioral)
-
-## “Nếu sát ngày Go-live (realease sản phẩm) mà bên Kiểm thử (QA/QC) phát hiện ra một lỗi nghiêm trọng, nhưng PO vẫn ép phải deploy đúng hạn để chạy chiến dịch Marketing, em sẽ xử lý thế nào?”
-
-* ✅ **Đánh giá mức độ ảnh hưởng (impact)**
-  * Bug có ảnh hưởng đến user chính không? (crash, mất data, security)
-  * Xác định rõ mức độ nghiêm trọng và phạm vi
-
-* ✅ **Trao đổi rõ với PO/Stakeholder**
-  * Trình bày rủi ro nếu release (ảnh hưởng user, brand, doanh thu)
-  * Đưa ra lựa chọn: delay, fix nóng (hotfix), hoặc workaround
-
-* ✅ **Đề xuất giải pháp thay thế**
-  * Tắt feature lỗi bằng **feature flag**
-  * Giới hạn rollout (staged rollout)
-  * Release tạm version ổn định trước
-
-* ✅ **Nếu buộc phải release**
-  * Chuẩn bị sẵn **hotfix plan**
-  * Monitor kỹ (Crashlytics, logs)
-  * Sẵn sàng rollback nếu cần
-
-👉 *Ưu tiên chất lượng & trải nghiệm user, communicate rõ rủi ro và luôn có phương án giảm thiểu (feature flag, hotfix, rollout).* 🚀
-
-
-## “Kể lại một lần em và Tech Lead hoặc đồng nghiệp bất đồng ý kiến về giải pháp kiến trúc (Architecture). Em đã thuyết phục họ hoặc giải quyết xung đột đó ra sao?”
-
-**Em từng có trường hợp bất đồng với Tech Lead về cách tổ chức kiến trúc (MVVM vs Clean + UseCase).**
-
-* ✅ **Vấn đề:**
-  * Em đề xuất dùng **Clean Architecture rõ ràng (UseCase, Domain layer)**
-  * Tech Lead muốn giữ **MVVM đơn giản** để giảm độ phức tạp và nhanh tiến độ
-
-* ✅ **Cách em xử lý:**
-  * Không tranh luận cảm tính → **đưa ra dữ liệu cụ thể**
-    * So sánh: maintain, testability, scale về sau
-  * Đưa **use case thực tế của project**
-    * Feature có thể mở rộng nhiều → Clean sẽ lợi hơn
-  * Đề xuất **giải pháp trung hòa**
-    * Áp dụng Clean cho module lớn/critical
-    * Module nhỏ vẫn dùng MVVM đơn giản
-
-* ✅ **Kết quả:**
-  * Team thống nhất hybrid approach
-  * Vừa đảm bảo tiến độ, vừa giữ được kiến trúc tốt ở phần quan trọng
-
-👉 *Khi bất đồng, em luôn dựa vào data + use case thực tế và hướng tới giải pháp cân bằng giữa chất lượng và deadline, không bảo thủ theo quan điểm cá nhân.* 🚀
-
-## User đang thực hiện chuyển khoản 10 triệu đồng, đúng lúc họ nhấn nút 'Xác nhận' thì mạng bị chập chờn (hoặc mất mạng đột ngột). Lỗi Timeout xảy ra. Trên app hiển thị gì và xử lý logic như thế nào để tránh việc user bấm lại lần nữa dẫn đến trừ tiền 2 lần?
-
-   1. **Về phía UI:** Ngay khi user nhấn nút, lập tức disable nút đó và hiển thị Loading Overlay để block tương tác (tránh click trùng).
-   2. **Về phía API/Logic:** Phải sử dụng cơ chế **Idempotency Key** (Mã định danh duy nhất cho mỗi phiên giao dịch, thường là mã UUID được sinh ra ở Client trước khi gửi request). Nếu request bị timeout, Client khi gửi lại (Retry mechanism) bắt buộc phải đính kèm đúng Key đó. Phía Backend thấy Key trùng sẽ không thực hiện giao dịch mới mà chỉ trả về trạng thái của giao dịch cũ.
-   3. **Về trạng thái:** Nếu Timeout, không được báo "Thành công" hay "Thất bại" một cách vội vã. Phải đưa UI về trạng thái *"Giao dịch đang được xử lý, vui lòng kiểm tra lại lịch sử hoặc số dư"* để an toàn cho cả khách hàng và ngân hàng.
-
-## App OCB OMNI hiện tại có lượng user rất lớn và cấu trúc tính năng thay đổi liên tục theo các chiến dịch Marketing của ngân hàng. Nếu mỗi lần thay đổi nhỏ ở trang chủ (như đổi banner, đổi thứ tự các nút chức năng nhanh) lại bắt user cập nhật app trên Google Play thì tỷ lệ drop rất cao. Em có giải pháp nào không?
-
-   * Áp dụng kiến trúc **Server-Driven UI (SDUI)**. Cấu trúc, bố cục (Layout), thứ tự các component và nội dung hiển thị của trang chủ sẽ do Backend định nghĩa và trả về dưới dạng một file JSON dynamic.
-   * Phía Android Client sẽ build sẵn các Component/Widget chuẩn (ví dụ bằng Jetpack Compose). Khi nhận được JSON từ Server, app sẽ tự động parse và render giao diện tương ứng theo real-time mà không cần release version mới trên Store.
-   * Kết hợp sử dụng **Firebase Remote Config** để thực hiện A/B Testing hoặc bật/tắt nhanh các tính năng (Feature Toggle) khi có sự cố.
 
 # Kinh nghiệm "ghi điểm" khi phỏng vấn OCB:
 
