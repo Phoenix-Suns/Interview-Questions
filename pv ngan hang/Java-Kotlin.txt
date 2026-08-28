@@ -1,0 +1,853 @@
+Bốn tính chất của lập trình hướng đối tượng.
+
+Tính đóng gói.
+
+Cho phép kiểm soát phạm vi truy cập của dữ liệu và phương thức.
+
+Ngăn thay đổi trực tiếp từ bên ngoài.
+
+Giúp dễ bảo trì.
+
+Tính kế thừa.
+
+Lớp con kế thừa thuộc tính và phương thức của lớp cha.
+
+Giúp tái sử dụng mã nguồn.
+
+Giảm trùng lặp code.
+
+Tính đa hình.
+
+Lớp con có thể ghi đè phương thức của lớp cha.
+
+Cùng một hành động nhưng có nhiều cách thực hiện khác nhau.
+
+Giúp dễ mở rộng hệ thống.
+
+Tính trừu tượng.
+
+Chỉ cung cấp những gì cần thiết.
+
+Ẩn chi tiết cài đặt bên trong.
+
+Giúp giảm độ phức tạp.
+
+---
+
+SOLID.
+
+Là năm nguyên tắc thiết kế hướng đối tượng.
+
+Giúp code dễ đọc.
+
+Dễ mở rộng.
+
+Dễ bảo trì.
+
+S.
+
+Single Responsibility Principle.
+
+Một class chỉ nên có một trách nhiệm.
+
+Ví dụ.
+
+Class mạng chỉ xử lý mạng.
+
+Class database chỉ xử lý database.
+
+O.
+
+Open Closed Principle.
+
+Mở cho mở rộng.
+
+Đóng cho chỉnh sửa.
+
+Ưu tiên thêm chức năng mới thay vì sửa code cũ.
+
+L.
+
+Liskov Substitution Principle.
+
+Lớp con có thể thay thế lớp cha.
+
+Mà chương trình vẫn hoạt động đúng.
+
+I.
+
+Interface Segregation Principle.
+
+Nhiều interface nhỏ tốt hơn một interface lớn.
+
+Không bắt class phải implement những hàm không dùng.
+
+D.
+
+Dependency Inversion Principle.
+
+Module cấp cao không phụ thuộc module cấp thấp.
+
+Cùng phụ thuộc abstraction.
+
+---
+
+Dependency Injection.
+
+Là kỹ thuật giảm phụ thuộc giữa các class.
+
+Không tự khởi tạo object bên trong class.
+
+Thay vào đó nhận object từ bên ngoài.
+
+Có thể inject bằng constructor.
+
+Setter.
+
+Hoặc interface.
+
+Các thư viện phổ biến.
+
+Hilt.
+
+Dagger.
+
+Koin.
+
+---
+
+Khi nào dùng Abstract Class.
+
+Khi các class có cùng bản chất.
+
+Có chung dữ liệu và hành vi.
+
+Abstract Class đóng vai trò lớp cha.
+
+Khi nào dùng Interface.
+
+Khi muốn định nghĩa khả năng hoặc hành vi.
+
+Một class có thể implement nhiều interface.
+
+---
+
+Java sử dụng pass by value.
+
+Luôn truyền bản sao giá trị.
+
+Đối với object.
+
+Java truyền bản sao của tham chiếu.
+
+Có thể thay đổi dữ liệu bên trong object.
+
+Nhưng không thể thay đổi tham chiếu gốc.
+
+---
+
+Daemon Thread.
+
+Là luồng chạy nền hỗ trợ ứng dụng.
+
+Ví dụ.
+
+Garbage Collector.
+
+Daemon Thread sẽ tự kết thúc khi ứng dụng kết thúc.
+
+---
+
+Mutable và Immutable.
+
+Mutable.
+
+Giá trị có thể thay đổi.
+
+Immutable.
+
+Giá trị không thể thay đổi sau khi khởi tạo.
+
+---
+
+String.
+
+Đối tượng bất biến.
+
+Mỗi lần thay đổi sẽ tạo object mới.
+
+StringBuilder.
+
+Cho phép thay đổi nội dung chuỗi.
+
+Nhanh hơn String.
+
+Không an toàn đa luồng.
+
+StringBuffer.
+
+Giống StringBuilder.
+
+An toàn đa luồng.
+
+Chậm hơn StringBuilder.
+
+---
+
+Các loại class trong Kotlin.
+
+Data Class.
+
+Dùng lưu trữ dữ liệu.
+
+Tự sinh equals.
+
+HashCode.
+
+ToString.
+
+Copy.
+
+Enum Class.
+
+Tập hợp các hằng số cố định.
+
+Ví dụ.
+
+Success.
+
+Error.
+
+Loading.
+
+Sealed Class.
+
+Mở rộng ý tưởng của Enum.
+
+Cho phép mỗi trạng thái chứa dữ liệu riêng.
+
+Rất phù hợp cho UI State.
+
+Abstract Class.
+
+Lớp trừu tượng.
+
+Làm nền tảng cho lớp con.
+
+Open Class.
+
+Cho phép kế thừa.
+
+Interface.
+
+Định nghĩa hành vi.
+
+Object.
+
+Singleton.
+
+Chỉ tồn tại một instance.
+
+Nested Class.
+
+Lớp nằm trong lớp khác.
+
+Không truy cập được lớp ngoài.
+
+Inner Class.
+
+Truy cập được thành viên lớp ngoài.
+
+---
+
+Scope Function trong Kotlin.
+
+Let.
+
+Thường dùng kiểm tra null.
+
+Sử dụng từ khóa it.
+
+Run.
+
+Thực hiện nhiều thao tác.
+
+Trả về kết quả lambda.
+
+Sử dụng từ khóa this.
+
+With.
+
+Nhóm nhiều thao tác trên một object.
+
+Sử dụng this.
+
+Apply.
+
+Khởi tạo và cấu hình object.
+
+Trả về chính object đó.
+
+Also.
+
+Thực hiện thao tác phụ.
+
+Ví dụ.
+
+Log.
+
+Debug.
+
+Trả về chính object đó.
+
+Sử dụng it.
+
+---
+
+Var.
+
+Biến có thể thay đổi.
+
+Val.
+
+Biến chỉ gán một lần.
+
+Const Val.
+
+Hằng số tại thời điểm biên dịch.
+
+Lateinit.
+
+Khai báo trước.
+
+Khởi tạo sau.
+
+Lazy.
+
+Khởi tạo khi sử dụng lần đầu.
+
+---
+
+Generic.
+
+Cho phép viết code dùng được với nhiều kiểu dữ liệu.
+
+Giúp tái sử dụng code.
+
+Tăng tính an toàn kiểu dữ liệu.
+
+---
+
+Singleton.
+
+Chỉ có một instance duy nhất trong ứng dụng.
+
+Ví dụ.
+
+Music Manager.
+
+Database Manager.
+
+---
+
+Garbage Collection.
+
+Tự động giải phóng bộ nhớ.
+
+Khi object không còn được tham chiếu.
+
+---
+
+Khi nào object được Garbage Collector thu gom.
+
+Khi không còn bất kỳ tham chiếu nào trỏ tới object đó.
+
+---
+
+RxJava.
+
+Thư viện lập trình bất đồng bộ.
+
+Giúp xử lý dữ liệu dạng stream.
+
+Giảm callback hell.
+
+Dễ kết hợp nhiều tác vụ.
+
+---
+
+Map.
+
+Một dữ liệu vào.
+
+Một dữ liệu ra.
+
+FlatMap.
+
+Một dữ liệu vào.
+
+Có thể sinh nhiều dữ liệu ra.
+
+Hoặc Observable mới.
+
+---
+
+Debounce.
+
+Chỉ nhận dữ liệu cuối cùng sau khoảng thời gian chờ.
+
+Thường dùng cho tìm kiếm.
+
+Throttle First.
+
+Lấy dữ liệu đầu tiên trong khoảng thời gian.
+
+Thường dùng chống bấm nút liên tục.
+
+Throttle Latest.
+
+Luôn lấy dữ liệu mới nhất.
+
+---
+
+Backpressure.
+
+Xảy ra khi dữ liệu phát ra nhanh hơn khả năng xử lý.
+
+Có thể gây tràn bộ nhớ.
+
+Giải pháp.
+
+Dùng Flowable.
+
+Hoặc các chiến lược Buffer.
+
+Drop.
+
+Latest.
+
+---
+
+Observable.
+
+Có thể phát nhiều giá trị.
+
+Flowable.
+
+Giống Observable.
+
+Có hỗ trợ Backpressure.
+
+Single.
+
+Chỉ phát một giá trị hoặc lỗi.
+
+Maybe.
+
+Một giá trị.
+
+Hoặc không có giá trị nào.
+
+Completable.
+
+Chỉ báo hoàn thành hoặc lỗi.
+
+Không trả dữ liệu.
+
+---
+
+Coroutine.
+
+Giải pháp bất đồng bộ của Kotlin.
+
+Nhẹ hơn Thread.
+
+Dễ đọc hơn RxJava.
+
+Hỗ trợ quản lý vòng đời tốt hơn.
+
+---
+
+Launch.
+
+Không trả kết quả.
+
+Async.
+
+Có trả kết quả.
+
+Kết hợp với await.
+
+Run Blocking.
+
+Chạy đồng bộ.
+
+Chặn thread hiện tại.
+
+---
+
+Structured Concurrency.
+
+Khi coroutine cha bị hủy.
+
+Toàn bộ coroutine con cũng bị hủy.
+
+Giúp tránh memory leak.
+
+---
+
+Dispatchers Main.
+
+Cập nhật giao diện.
+
+Dispatchers IO.
+
+API.
+
+File.
+
+Database.
+
+Dispatchers Default.
+
+Tính toán nặng.
+
+Dispatchers Unconfined.
+
+Không khuyến khích sử dụng.
+
+---
+
+Suspend Function.
+
+Chỉ được gọi bên trong Coroutine.
+
+Hoặc từ Suspend Function khác.
+
+---
+
+Bắt lỗi trong Coroutine.
+
+Sử dụng Try Catch.
+
+Hoặc Coroutine Exception Handler.
+
+---
+
+Job.
+
+Một coroutine lỗi.
+
+Toàn bộ cây coroutine bị hủy.
+
+Supervisor Job.
+
+Một coroutine lỗi.
+
+Các coroutine khác vẫn tiếp tục chạy.
+
+---
+
+Tại sao dùng Coroutine thay RxJava.
+
+Code đơn giản hơn.
+
+Ít tài nguyên hơn.
+
+Được Android hỗ trợ chính thức.
+
+Dễ đọc hơn.
+
+---
+
+MVC.
+
+Controller xử lý View và Model.
+
+Controller thường phình to.
+
+---
+
+MVP.
+
+Presenter làm trung gian giữa View và Model.
+
+View giao tiếp với Presenter qua Interface.
+
+---
+
+MVVM.
+
+View gửi yêu cầu tới ViewModel.
+
+ViewModel lấy dữ liệu từ Model.
+
+ViewModel cập nhật View qua LiveData hoặc StateFlow.
+
+Đây là kiến trúc phổ biến nhất trên Android hiện nay.
+
+---
+
+MVI.
+
+View gửi Intent.
+
+ViewModel xử lý Intent.
+
+Sinh ra State mới.
+
+View hiển thị State.
+
+Luồng dữ liệu một chiều.
+
+Dễ quản lý trạng thái phức tạp.
+
+---
+
+Khi nào ViewModel bị hủy.
+
+Activity bị hủy hoàn toàn.
+
+Fragment bị hủy hoàn toàn.
+
+Gọi ViewModelStore Clear.
+
+Hoặc ứng dụng bị kết thúc.
+
+---
+
+Clean Architecture.
+
+Mục tiêu.
+
+Tách biệt các tầng.
+
+Dễ bảo trì.
+
+Dễ mở rộng.
+
+Dễ kiểm thử.
+
+---
+
+Presentation Layer.
+
+Chịu trách nhiệm hiển thị dữ liệu cho người dùng.
+
+Gồm.
+
+Activity.
+
+Fragment.
+
+ViewModel.
+
+Presenter.
+
+Nhiệm vụ.
+
+Nhận thao tác từ người dùng.
+
+Hiển thị dữ liệu lên giao diện.
+
+Gọi Use Case.
+
+---
+
+Domain Layer.
+
+Chứa nghiệp vụ chính của ứng dụng.
+
+Là tầng quan trọng nhất.
+
+Không phụ thuộc Android.
+
+Không phụ thuộc Framework.
+
+Gồm.
+
+Use Case.
+
+Entity.
+
+Repository Interface.
+
+Nhiệm vụ.
+
+Xử lý Business Logic.
+
+Định nghĩa hành vi của hệ thống.
+
+---
+
+Application Layer.
+
+Có thể gộp chung với Domain.
+
+Điều phối luồng dữ liệu.
+
+Kết nối Use Case với Data Layer.
+
+Nhiệm vụ.
+
+Thực thi các nghiệp vụ của ứng dụng.
+
+---
+
+Data Layer.
+
+Chịu trách nhiệm lấy và lưu dữ liệu.
+
+Gồm.
+
+Repository Implementation.
+
+Remote Data Source.
+
+Local Data Source.
+
+Mapper.
+
+Nhiệm vụ.
+
+Gọi API.
+
+Đọc ghi Database.
+
+Chuyển đổi dữ liệu.
+
+---
+
+Luồng dữ liệu.
+
+UI.
+
+ViewModel.
+
+Use Case.
+
+Repository.
+
+Data Source.
+
+API hoặc Database.
+
+---
+
+Chiều đi.
+
+Người dùng thao tác trên giao diện.
+
+ViewModel nhận sự kiện.
+
+ViewModel gọi Use Case.
+
+Use Case gọi Repository.
+
+Repository gọi Data Source.
+
+Data Source lấy dữ liệu từ API hoặc Database.
+
+---
+
+Chiều về.
+
+API hoặc Database trả dữ liệu.
+
+Data Source xử lý dữ liệu.
+
+Repository chuyển đổi dữ liệu nếu cần.
+
+Use Case xử lý nghiệp vụ.
+
+ViewModel nhận kết quả.
+
+UI hiển thị dữ liệu.
+
+---
+
+Quy tắc phụ thuộc.
+
+Presentation phụ thuộc Domain.
+
+Data phụ thuộc Domain.
+
+Domain không phụ thuộc tầng nào.
+
+Domain là trung tâm.
+
+---
+
+Cách nhớ nhanh.
+
+Presentation.
+
+Hiển thị.
+
+Domain.
+
+Nghiệp vụ.
+
+Data.
+
+Dữ liệu.
+
+---
+
+Công thức nhớ.
+
+View.
+
+ViewModel.
+
+Use Case.
+
+Repository.
+
+Data Source.
+
+API hoặc Database.
+
+Sau đó dữ liệu trả ngược lại theo chiều ngược lại.
+
+---
+
+Ưu điểm.
+
+Dễ Unit Test.
+
+Dễ thay thế API hoặc Database.
+
+Dễ bảo trì.
+
+Dễ mở rộng tính năng.
+
+Giảm phụ thuộc giữa các module.
+
+---
+
+Phỏng vấn.
+
+Use Case nằm ở đâu?
+
+Domain Layer.
+
+Repository Interface nằm ở đâu?
+
+Domain Layer.
+
+Repository Implementation nằm ở đâu?
+
+Data Layer.
+
+ViewModel nằm ở đâu?
+
+Presentation Layer.
+
+API Service nằm ở đâu?
+
+Data Layer.
+
+Entity nằm ở đâu?
+
+Domain Layer.

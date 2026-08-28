@@ -1,0 +1,595 @@
+Android cơ bản.
+
+Bốn Component chính trong Android.
+
+Activity.
+
+Activity là màn hình giao diện người dùng.
+
+Xử lý sự kiện trên màn hình hiện tại.
+
+Mỗi Activity thường tương ứng một màn hình.
+
+Service.
+
+Service thực hiện tác vụ chạy nền.
+
+Không có giao diện người dùng.
+
+Ví dụ.
+
+Phát nhạc.
+
+Đồng bộ dữ liệu.
+
+Theo dõi vị trí GPS.
+
+Broadcast Receiver.
+
+Nhận sự kiện từ hệ thống Android.
+
+Ví dụ.
+
+Mất kết nối mạng.
+
+Pin yếu.
+
+Khởi động thiết bị.
+
+Content Provider.
+
+Quản lý dữ liệu.
+
+Chia sẻ dữ liệu giữa các ứng dụng.
+
+---
+
+Giao diện người dùng.
+
+Làm sao biết View nào tốn tài nguyên?
+
+Sử dụng Android Profiler.
+
+Profiler giúp theo dõi CPU.
+
+RAM.
+
+Mức sử dụng tài nguyên khi mở màn hình.
+
+---
+
+Đơn vị đo trong Android.
+
+PT.
+
+Một phần bảy mươi hai inch.
+
+DP.
+
+Density Independent Pixel.
+
+Đơn vị độc lập mật độ màn hình.
+
+Dùng cho kích thước giao diện.
+
+SP.
+
+Scale Independent Pixel.
+
+Thường dùng cho kích thước chữ.
+
+Tự thay đổi theo cài đặt font của người dùng.
+
+---
+
+Quy đổi giữa DP và PX.
+
+DP sang PX.
+
+Lấy DP nhân với mật độ màn hình.
+
+PX sang DP.
+
+Lấy PX chia cho mật độ màn hình.
+
+---
+
+Service là gì?
+
+Service là thành phần chạy nền.
+
+Không có giao diện.
+
+Ví dụ.
+
+Phát nhạc.
+
+Đồng bộ dữ liệu.
+
+Theo dõi GPS.
+
+Xử lý công việc khi ứng dụng đóng.
+
+---
+
+Phân biệt Service và Intent Service.
+
+Service.
+
+Có thể chạy liên tục.
+
+Không tự dừng.
+
+Intent Service.
+
+Xử lý từng Intent theo hàng đợi.
+
+Tự dừng khi hoàn thành.
+
+---
+
+Phân biệt Service, Intent Service, Thread và AsyncTask.
+
+Service.
+
+Android Component.
+
+Chạy nền.
+
+Mặc định chạy trên Main Thread.
+
+Intent Service.
+
+Là Service đặc biệt.
+
+Tự tạo Worker Thread.
+
+Tự dừng khi xong việc.
+
+Thread.
+
+Luồng thực thi độc lập.
+
+Dùng để xử lý công việc song song.
+
+AsyncTask.
+
+Công cụ xử lý bất đồng bộ cũ.
+
+Chạy ở Background Thread.
+
+Trả kết quả về UI Thread.
+
+Hiện nay nên dùng Coroutine.
+
+---
+
+Service trên Android tám chấm không.
+
+Background Service.
+
+Bị giới hạn thời gian chạy.
+
+Foreground Service.
+
+Phải có Notification.
+
+Người dùng biết Service đang hoạt động.
+
+---
+
+Foreground Service là gì?
+
+Dùng cho tác vụ người dùng cần biết.
+
+Ví dụ.
+
+Nghe nhạc.
+
+Dẫn đường.
+
+Ghi âm.
+
+---
+
+Background Service là gì?
+
+Chạy nền.
+
+Người dùng không tương tác trực tiếp.
+
+Android giới hạn hoạt động.
+
+---
+
+Bound Service là gì?
+
+Cho phép Activity hoặc Component khác kết nối tới Service.
+
+Nhận dữ liệu liên tục.
+
+Mô hình Client Server.
+
+---
+
+Có mấy cách khởi động Service?
+
+Khởi động bằng Class Name.
+
+Hoặc khởi động bằng Action và Package Name.
+
+---
+
+Thread Pool là gì?
+
+Quản lý nhiều Thread.
+
+Tái sử dụng Thread.
+
+Giảm chi phí tạo mới Thread.
+
+Tăng hiệu năng.
+
+---
+
+Intent là gì?
+
+Intent dùng để giao tiếp giữa các Component Android.
+
+---
+
+Explicit Intent.
+
+Chỉ rõ Component cần gọi.
+
+Ví dụ.
+
+Mở trực tiếp Activity cụ thể.
+
+---
+
+Implicit Intent.
+
+Chỉ mô tả hành động cần thực hiện.
+
+Hệ thống tự tìm ứng dụng phù hợp.
+
+Ví dụ.
+
+Mở trình duyệt.
+
+Chia sẻ nội dung.
+
+---
+
+Serializable và Parcelable.
+
+Serializable.
+
+Chuẩn của Java.
+
+Dễ sử dụng.
+
+Hiệu năng thấp hơn.
+
+Parcelable.
+
+Chuẩn của Android.
+
+Nhanh hơn.
+
+Tối ưu hơn.
+
+Thường dùng khi truyền dữ liệu giữa Activity.
+
+---
+
+ANR là gì?
+
+Application Not Responding.
+
+Ứng dụng bị treo.
+
+Không phản hồi thao tác người dùng.
+
+Nguyên nhân phổ biến.
+
+Main Thread bị chặn quá lâu.
+
+---
+
+Thư viện HTTP đã dùng.
+
+Retrofit.
+
+OkHttp.
+
+HttpURLConnection.
+
+---
+
+REST API là gì?
+
+REST là kiến trúc thiết kế API.
+
+API là giao diện giao tiếp giữa các hệ thống.
+
+RESTful API là API tuân theo chuẩn REST.
+
+---
+
+Tại sao Android dùng SQLite?
+
+Không cần cài đặt riêng.
+
+Nhẹ.
+
+Nhanh.
+
+Lưu trong một file.
+
+Hỗ trợ truy vấn SQL.
+
+Không cần mô hình Client Server.
+
+---
+
+Gradle là gì?
+
+Công cụ build tự động.
+
+Quản lý dependency.
+
+Đóng gói ứng dụng Android.
+
+---
+
+Upload ảnh lên Server như thế nào?
+
+Chọn ảnh từ thiết bị.
+
+Tạo API upload.
+
+Sử dụng Retrofit.
+
+Gửi Multipart Request lên Server.
+
+---
+
+Application là gì?
+
+Lớp gốc của ứng dụng Android.
+
+Được tạo đầu tiên khi ứng dụng khởi động.
+
+Thường dùng để khởi tạo thư viện.
+
+Dependency Injection.
+
+Logging.
+
+Analytics.
+
+---
+
+Context là gì?
+
+Cung cấp thông tin môi trường ứng dụng.
+
+Dùng để truy cập tài nguyên.
+
+Khởi động Activity.
+
+Khởi động Service.
+
+Hiển thị Toast.
+
+---
+
+Application Context.
+
+Context của toàn ứng dụng.
+
+Tồn tại suốt vòng đời ứng dụng.
+
+---
+
+Activity Context.
+
+Context gắn với Activity.
+
+Dùng cho các thao tác liên quan giao diện.
+
+---
+
+Tại sao Bytecode Java không chạy trực tiếp trên Android?
+
+Android không dùng JVM.
+
+Android dùng Dalvik.
+
+Và Android Runtime.
+
+Hay còn gọi là ART.
+
+---
+
+Memory Leak là gì?
+
+Bộ nhớ được cấp phát nhưng không được giải phóng.
+
+Làm tăng RAM sử dụng.
+
+Có thể gây Out Of Memory.
+
+---
+
+Cách tránh Memory Leak.
+
+Dùng Application Context khi phù hợp.
+
+Hủy Listener.
+
+Hủy Callback.
+
+Hủy Broadcast Receiver.
+
+Không giữ tham chiếu Activity quá lâu.
+
+Dùng Weak Reference.
+
+Sử dụng LeakCanary để phát hiện lỗi.
+
+---
+
+Unit Test là gì?
+
+Kiểm tra logic chương trình.
+
+Không phụ thuộc giao diện.
+
+Giúp phát hiện lỗi sớm.
+
+---
+
+Code dễ Unit Test.
+
+Sử dụng Dependency Injection.
+
+Dùng Interface.
+
+Dùng Mock hoặc Fake Object.
+
+Tránh Singleton.
+
+Tránh Static.
+
+Không gọi API thật.
+
+Không gọi Database thật.
+
+---
+
+Bốn ảnh upload song song.
+
+Sau đó mới gọi Save.
+
+Giải pháp một.
+
+Đếm số lượng upload hoàn thành.
+
+Giải pháp hai.
+
+Dùng Coroutine.
+
+Chạy async đồng thời.
+
+Dùng awaitAll.
+
+Đợi hoàn thành rồi gọi Save.
+
+Giải pháp ba.
+
+Dùng RxJava.
+
+Kết hợp bằng Zip.
+
+Giải pháp bốn.
+
+Dùng Flow.
+
+Kết hợp nhiều luồng dữ liệu.
+
+---
+
+Dependency Injection là gì?
+
+Kỹ thuật giảm phụ thuộc giữa các lớp.
+
+Giúp code dễ mở rộng.
+
+Dễ kiểm thử.
+
+Dễ bảo trì.
+
+Các cách triển khai.
+
+Constructor Injection.
+
+Setter Injection.
+
+Interface Injection.
+
+Các thư viện phổ biến.
+
+Hilt.
+
+Dagger.
+
+Koin.
+
+---
+
+Các bước tích hợp Google Map.
+
+Tạo API Key.
+
+Khai báo trong Manifest.
+
+Thêm Dependency.
+
+Khởi tạo Map.
+
+Lắng nghe sự kiện On Map Ready.
+
+Thực hiện vẽ Marker hoặc Polyline.
+
+---
+
+Các bước Push Notification Firebase.
+
+Tạo Project Firebase.
+
+Thêm file cấu hình.
+
+Thêm Dependency.
+
+Tạo Firebase Messaging Service.
+
+Xin quyền Notification.
+
+Hiển thị thông báo khi nhận dữ liệu.
+
+---
+
+Google Play Billing.
+
+Tạo sản phẩm trên Google Play Console.
+
+Thêm Billing Library.
+
+Lấy danh sách sản phẩm.
+
+Người dùng thanh toán.
+
+Kiểm tra kết quả.
+
+Thành công.
+
+Thất bại.
+
+Hoặc Pending.
+
+Nếu thành công.
+
+Xác nhận hoặc Consume giao dịch.
+
+---
+
+Thư viện Dependency Injection phổ biến.
+
+Hilt.
+
+Dagger.
+
+Koin.

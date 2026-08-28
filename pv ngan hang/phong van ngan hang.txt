@@ -1,0 +1,495 @@
+## Tối ưu bộ nhớ như thế nào?
+
+Không giữ Activity hoặc Context quá lâu.
+
+Tránh dùng Static với Activity.
+
+Ưu tiên Application Context khi phù hợp.
+
+Dọn dẹp tài nguyên đúng Lifecycle.
+
+Hủy Listener.
+
+Hủy Callback.
+
+Unregister Receiver.
+
+Clear Binding.
+
+Sử dụng ViewModel và Lifecycle Scope.
+
+---
+
+## Làm sao tránh Memory Leak?
+
+Không giữ tham chiếu tới Activity hoặc View quá lâu.
+
+Tránh Leak từ Handler.
+
+Tránh Leak từ Thread.
+
+Tránh Leak từ Listener.
+
+Sử dụng WeakReference khi cần.
+
+Dùng LeakCanary để phát hiện Leak.
+
+Dùng Profiler để kiểm tra bộ nhớ.
+
+Cách tốt nhất là quản lý Lifecycle đúng và Cleanup đầy đủ.
+
+---
+
+## Làm sao tối ưu ứng dụng có nhiều tác vụ chạy ngầm?
+
+Ưu tiên Coroutine hoặc WorkManager.
+
+Không giữ Thread chạy liên tục.
+
+Sử dụng Cache.
+
+Lưu dữ liệu bằng Room hoặc Memory Cache.
+
+Chỉ gọi API khi cần.
+
+Áp dụng Debounce hoặc Throttle.
+
+Sử dụng Paging với dữ liệu lớn.
+
+Giới hạn số lượng Background Task.
+
+Sử dụng Lifecycle Aware Component.
+
+---
+
+## Làm sao bảo mật dữ liệu lưu trên thiết bị?
+
+Không lưu dữ liệu dạng Plain Text.
+
+Luôn mã hóa dữ liệu nhạy cảm.
+
+Android sử dụng EncryptedSharedPreferences và Keystore.
+
+iOS sử dụng Keychain.
+
+Không Hardcode Key trong ứng dụng.
+
+Không lưu Password hoặc Token quá lâu.
+
+Bật Proguard hoặc R8.
+
+Có thể dùng xác thực sinh trắc học.
+
+---
+
+## SSL Pinning là gì?
+
+SSL Pinning giúp ứng dụng chỉ kết nối với Server hợp lệ.
+
+Ngăn tấn công Man In The Middle.
+
+Thường sử dụng CertificatePinner của OkHttp.
+
+---
+
+## Làm sao phát hiện thiết bị Root hoặc Jailbreak?
+
+Kiểm tra file SU.
+
+Kiểm tra Magisk.
+
+Kiểm tra SuperSU.
+
+Kiểm tra Frida.
+
+Android thường dùng RootBeer.
+
+Có thể dùng Play Integrity API.
+
+Nếu phát hiện Root thì hạn chế hoặc chặn tính năng.
+
+---
+
+## MVVM và Clean Architecture khác nhau như thế nào?
+
+MVVM là Pattern cho tầng giao diện.
+
+Tập trung xử lý UI.
+
+Bao gồm View, ViewModel và Model.
+
+---
+
+Clean Architecture là kiến trúc tổng thể.
+
+Bao gồm Presentation.
+
+Domain.
+
+Data.
+
+---
+
+MVVM thường được sử dụng bên trong Clean Architecture.
+
+---
+
+## Tại sao Mobile Banking cần Modularization?
+
+Giúp dễ bảo trì.
+
+Giúp dễ mở rộng.
+
+Tăng tốc độ Build.
+
+Dễ kiểm thử.
+
+Dễ tái sử dụng Code.
+
+Giảm Conflict giữa các Team.
+
+---
+
+Ví dụ.
+
+Core Module.
+
+Data Module.
+
+Domain Module.
+
+Feature Login.
+
+Feature Home.
+
+Feature Transfer.
+
+---
+
+## Luồng dữ liệu trong Clean Architecture như thế nào?
+
+UI gọi ViewModel.
+
+ViewModel gọi UseCase.
+
+UseCase gọi Repository.
+
+Repository gọi Data Source.
+
+Data Source gọi API hoặc Database.
+
+---
+
+Dữ liệu trả về theo chiều ngược lại.
+
+API.
+
+Repository.
+
+UseCase.
+
+ViewModel.
+
+UI.
+
+---
+
+## Dependency Injection là gì?
+
+Là kỹ thuật giảm sự phụ thuộc giữa các Class.
+
+Object được tạo bên ngoài.
+
+Sau đó Inject vào Class cần sử dụng.
+
+Giúp dễ Test.
+
+Giúp dễ mở rộng.
+
+Giúp quản lý vòng đời Object.
+
+---
+
+## Scope trong Hilt là gì?
+
+Scope giúp quản lý vòng đời của Object.
+
+@Singleton.
+
+Một Instance duy nhất trong toàn ứng dụng.
+
+---
+
+@ActivityRetainedScoped.
+
+Sống cùng Activity.
+
+Không bị hủy khi xoay màn hình.
+
+Thường dùng với ViewModel.
+
+---
+
+## StateFlow và SharedFlow khác nhau như thế nào?
+
+StateFlow dùng lưu trạng thái hiện tại.
+
+Ví dụ.
+
+Loading.
+
+Success.
+
+Error.
+
+---
+
+SharedFlow dùng phát sự kiện một lần.
+
+Ví dụ.
+
+Toast.
+
+Dialog.
+
+Navigation.
+
+---
+
+## Các Dispatcher trong Coroutine là gì?
+
+Dispatchers Main.
+
+Dùng cập nhật giao diện.
+
+---
+
+Dispatchers IO.
+
+Dùng gọi API.
+
+Database.
+
+File.
+
+---
+
+Dispatchers Default.
+
+Dùng cho xử lý tính toán nặng.
+
+---
+
+Dispatchers Unconfined.
+
+Ít sử dụng trong thực tế.
+
+---
+
+## Làm sao phát hiện Memory Leak?
+
+Dùng LeakCanary để phát hiện Leak.
+
+Theo dõi Object không được giải phóng.
+
+Kiểm tra Profiler để xem mức sử dụng RAM.
+
+---
+
+Lỗi thường gặp.
+
+Giữ Context quá lâu.
+
+Giữ View quá lâu.
+
+Coroutine chưa bị hủy.
+
+Thread vẫn chạy khi Activity đã Destroy.
+
+---
+
+## Làm sao bảo vệ màn hình Banking khi ứng dụng xuống nền?
+
+Sử dụng FLAG_SECURE.
+
+Ngăn chụp màn hình.
+
+Ngăn hệ thống tạo ảnh Snapshot.
+
+Bảo vệ thông tin nhạy cảm của người dùng.
+
+---
+
+## Nếu sát ngày Go Live phát hiện Bug nghiêm trọng thì xử lý thế nào?
+
+Đánh giá mức độ ảnh hưởng.
+
+Bug có gây Crash không.
+
+Có mất dữ liệu không.
+
+Có ảnh hưởng bảo mật không.
+
+---
+
+Trao đổi rõ với PO và Stakeholder.
+
+Trình bày rủi ro nếu Release.
+
+---
+
+Đề xuất giải pháp.
+
+Delay Release.
+
+Hotfix.
+
+Workaround.
+
+Feature Flag.
+
+---
+
+Có thể dùng Staged Rollout.
+
+Phát hành cho một phần người dùng trước.
+
+---
+
+Nếu vẫn phải Release.
+
+Chuẩn bị Hotfix Plan.
+
+Theo dõi Crashlytics.
+
+Theo dõi Log.
+
+Sẵn sàng Rollback.
+
+---
+
+## Nếu bất đồng với Tech Lead về kiến trúc thì xử lý thế nào?
+
+Không tranh luận cảm tính.
+
+Đưa dữ liệu thực tế.
+
+Đưa ưu nhược điểm của từng giải pháp.
+
+---
+
+Đưa Use Case thực tế của dự án.
+
+Phân tích khả năng mở rộng.
+
+Khả năng bảo trì.
+
+Khả năng kiểm thử.
+
+---
+
+Đề xuất giải pháp trung hòa.
+
+Module lớn dùng Clean Architecture.
+
+Module nhỏ dùng MVVM đơn giản.
+
+---
+
+Mục tiêu cuối cùng.
+
+Đảm bảo chất lượng.
+
+Đảm bảo tiến độ.
+
+---
+
+## Nếu giao dịch chuyển khoản bị Timeout thì xử lý thế nào?
+
+Ngay khi người dùng nhấn xác nhận.
+
+Disable Button.
+
+Hiển thị Loading.
+
+Ngăn người dùng bấm nhiều lần.
+
+---
+
+Sử dụng Idempotency Key.
+
+Mỗi giao dịch có một mã định danh duy nhất.
+
+---
+
+Nếu Retry.
+
+Phải gửi lại đúng Key cũ.
+
+---
+
+Server nhận Key trùng.
+
+Không tạo giao dịch mới.
+
+Chỉ trả về trạng thái giao dịch cũ.
+
+---
+
+Không báo Thành công hoặc Thất bại ngay.
+
+Hiển thị.
+
+Giao dịch đang được xử lý.
+
+Vui lòng kiểm tra lại lịch sử giao dịch.
+
+---
+
+## Làm sao thay đổi giao diện ứng dụng mà không cần cập nhật từ Store?
+
+Sử dụng Server Driven UI.
+
+Server trả về JSON mô tả giao diện.
+
+Ứng dụng tự Render giao diện theo JSON.
+
+---
+
+Có thể kết hợp Firebase Remote Config.
+
+A B Testing.
+
+Feature Toggle.
+
+Bật tắt tính năng từ xa.
+
+---
+
+## Kinh nghiệm phỏng vấn Mobile Banking là gì?
+
+Luôn suy nghĩ theo hướng Defensive Programming.
+
+Luôn chuẩn bị cho các tình huống.
+
+Mất mạng.
+
+Timeout.
+
+Dữ liệu lỗi.
+
+Tấn công bảo mật.
+
+---
+
+Đây là những yếu tố rất được đánh giá cao trong môi trường Ngân hàng.
+
+Logging.
+
+Monitoring.
+
+Security.
+
+Rollback.
+
+
